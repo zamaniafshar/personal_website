@@ -12,6 +12,18 @@ export type ArticleMeta = {
 
 const root = path.join(process.cwd(), 'src/content/articles');
 
+function normalizeDate(value: unknown): string {
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10);
+  }
+
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  return '';
+}
+
 export async function getArticles(locale: 'fa' | 'en'): Promise<ArticleMeta[]> {
   const dir = path.join(root, locale);
   const files = await fs.readdir(dir);
@@ -22,7 +34,7 @@ export async function getArticles(locale: 'fa' | 'en'): Promise<ArticleMeta[]> {
       return {
         slug: file.replace('.mdx', ''),
         title: data.title as string,
-        date: data.date as string,
+        date: normalizeDate(data.date),
         excerpt: data.excerpt as string,
         tags: (data.tags as string[]) ?? []
       };
@@ -35,5 +47,11 @@ export async function getArticleBySlug(locale: 'fa' | 'en', slug: string) {
   const filePath = path.join(root, locale, `${slug}.mdx`);
   const raw = await fs.readFile(filePath, 'utf-8');
   const { content, data } = matter(raw);
-  return { content, meta: data as Omit<ArticleMeta, 'slug'> };
+  return {
+    content,
+    meta: {
+      ...(data as Omit<ArticleMeta, 'slug'>),
+      date: normalizeDate(data.date)
+    }
+  };
 }

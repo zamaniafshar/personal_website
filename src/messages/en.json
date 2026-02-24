@@ -21,7 +21,14 @@
     "badge": "Mobile Developer • Product-minded Engineer",
     "title": "I build premium mobile experiences that feel magical.",
     "subtitle": "Several years shipping apps, obsessed with smooth performance and elegant UX.",
-    "statement": "Search my name and you'll see products people use every day."
+    "statement": "Search my name and you'll see products people use every day.",
+    "terminalLine": "> Hi, I'm {name} - Mobile Developer",
+    "hudOnlineLabel": "ONLINE",
+    "hudOnlineValue": "stable",
+    "hudBuildLabel": "BUILD",
+    "hudBuildValue": "v3.2",
+    "hudLatencyLabel": "LATENCY",
+    "hudLatencyValue": "32ms"
   },
   "sections": {
     "aboutTitle": "About Me",

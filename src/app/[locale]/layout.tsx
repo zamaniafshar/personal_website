@@ -20,7 +20,9 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     <NextIntlClientProvider messages={messages}>
       <ThemeProvider>
         <HtmlDir locale={locale} />
-        <div className={locale === 'fa' ? 'font-[var(--font-fa)]' : 'font-[var(--font-en)]'}>{children}</div>
+        <div dir={locale === 'fa' ? 'rtl' : 'ltr'} className={locale === 'fa' ? 'font-[var(--font-fa)]' : 'font-[var(--font-en)]'}>
+          {children}
+        </div>
       </ThemeProvider>
     </NextIntlClientProvider>
   );

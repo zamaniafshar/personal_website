@@ -10,6 +10,7 @@ import { HighlightsSection } from '@/components/sections/highlights';
 import { WorkSection } from '@/components/sections/work';
 import { ContactSection } from '@/components/sections/contact';
 import { Footer } from '@/components/ui/footer';
+import { CursorGlow } from '@/components/ui/cursor-glow';
 
 export async function generateMetadata({ params }: { params: { locale: string } }) {
   const t = await getTranslations({ locale: params.locale, namespace: 'hero' });
@@ -25,20 +26,23 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function Home({ params }: { params: { locale: 'fa' | 'en' } }) {
   return (
-    <div className="relative overflow-hidden bg-noise">
-      <Navbar locale={params.locale} />
-      <main>
-        <HeroSection />
-        <AboutSection locale={params.locale} />
-        <NowSection locale={params.locale} />
-        <SkillsSection />
-        <ProjectsSection locale={params.locale} />
-        <ArticlesSection locale={params.locale} />
-        <HighlightsSection locale={params.locale} />
-        <WorkSection locale={params.locale} />
-        <ContactSection locale={params.locale} />
-      </main>
-      <Footer locale={params.locale} />
+    <div className="relative isolate overflow-hidden">
+      <CursorGlow />
+      <div className="relative z-10">
+        <Navbar locale={params.locale} />
+        <main>
+          <HeroSection />
+          <AboutSection locale={params.locale} />
+          <NowSection locale={params.locale} />
+          <SkillsSection />
+          <ProjectsSection locale={params.locale} />
+          <ArticlesSection locale={params.locale} />
+          <HighlightsSection locale={params.locale} />
+          <WorkSection locale={params.locale} />
+          <ContactSection locale={params.locale} />
+        </main>
+        <Footer locale={params.locale} />
+      </div>
     </div>
   );
 }

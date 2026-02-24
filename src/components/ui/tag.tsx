@@ -1,5 +1,15 @@
 import { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
 
-export function Tag({ children }: { children: ReactNode }) {
-  return <span className="rounded-full border border-emerald-400/30 px-3 py-1 text-xs text-emerald-300">{children}</span>;
+export function Tag({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <span
+      className={cn(
+        'inline-flex items-center rounded-full border border-panelBorder/28 bg-panel/50 px-3 py-1 text-xs text-muted',
+        className
+      )}
+    >
+      {children}
+    </span>
+  );
 }

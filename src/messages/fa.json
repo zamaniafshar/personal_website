@@ -21,7 +21,14 @@
     "badge": "توسعه‌دهنده موبایل • مهندس محصول‌محور",
     "title": "تجربه‌های موبایل حرفه‌ای می‌سازم که حس جادویی دارند.",
     "subtitle": "چندین سال تجربه انتشار اپلیکیشن، با وسواس روی پرفورمنس و UX تمیز.",
-    "statement": "اسمم را جست‌وجو کنید؛ محصولاتی می‌بینید که هر روز استفاده می‌شوند."
+    "statement": "اسمم را جست‌وجو کنید؛ محصولاتی می‌بینید که هر روز استفاده می‌شوند.",
+    "terminalLine": "> سلام، من {name} هستم - توسعه‌دهنده موبایل",
+    "hudOnlineLabel": "ONLINE",
+    "hudOnlineValue": "پایدار",
+    "hudBuildLabel": "BUILD",
+    "hudBuildValue": "نسخه ۳.۲",
+    "hudLatencyLabel": "LATENCY",
+    "hudLatencyValue": "۳۲ms"
   },
   "sections": {
     "aboutTitle": "درباره من",

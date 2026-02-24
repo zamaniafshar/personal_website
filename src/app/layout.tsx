@@ -8,7 +8,7 @@ const vazir = Vazirmatn({ subsets: ['arabic'], variable: '--font-fa' });
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${inter.variable} ${vazir.variable} bg-bg text-zinc-100`}>{children}</body>
+      <body className={`${inter.variable} ${vazir.variable} bg-bg text-text`}>{children}</body>
     </html>
   );
 }

@@ -1,10 +1,26 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { highlights } from '@/data/site';
+import { MotionSection } from '@/components/ui/motion-section';
+import { SectionHeader } from '@/components/ui/section-header';
+import { itemStagger, sectionContainer } from '@/lib/motion';
 
 export function HighlightsSection({ locale }: { locale: 'fa' | 'en' }) {
+  const t = useTranslations('sections');
+
   return (
-    <section id="highlights" className="section">
-      <h2 className="mb-6 text-3xl font-bold">{locale === 'fa' ? 'هایلایت‌ها' : 'Highlights'}</h2>
-      <div className="grid gap-4 md:grid-cols-3">{highlights.map((h) => <article className="card text-center" key={h.en}><p className="text-lg font-semibold text-emerald-300">{h[locale]}</p></article>)}</div>
-    </section>
+    <MotionSection id="highlights">
+      <SectionHeader title={t('highlightsTitle')} />
+
+      <motion.div className="grid gap-4 md:grid-cols-3" variants={sectionContainer}>
+        {highlights.map((highlight) => (
+          <motion.article key={highlight.en} variants={itemStagger} className="glass-panel-calm rounded-2xl p-6 text-center">
+            <p className="text-lg font-semibold text-text">{highlight[locale]}</p>
+          </motion.article>
+        ))}
+      </motion.div>
+    </MotionSection>
   );
 }
