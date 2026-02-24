@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "now": "Now",
+    "skills": "Skills",
+    "projects": "Projects",
+    "articles": "Articles",
+    "highlights": "Highlights",
+    "work": "Work with me",
+    "contact": "Contact"
+  },
+  "hero": {
+    "ctaProjects": "Projects",
+    "ctaArticles": "Articles",
+    "ctaContact": "Contact"
+  },
+  "sections": {
+    "about": "About me",
+    "now": "Now",
+    "skills": "Skills",
+    "projects": "Selected Projects",
+    "articles": "Articles",
+    "highlights": "Highlights",
+    "work": "Hire me",
+    "contact": "Contact"
+  },
+  "projects": {
+    "all": "All",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "experiments": "Experiments"
+  },
+  "articles": {
+    "onSite": "On this site",
+    "external": "External"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "success": "Message ready. Your email app will open now.",
+    "copyEmail": "Copy email",
+    "emailCopied": "Email copied"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light"
+  }
+}

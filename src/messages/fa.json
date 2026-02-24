@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "خانه",
+    "about": "درباره من",
+    "now": "الان",
+    "skills": "مهارت‌ها",
+    "projects": "پروژه‌ها",
+    "articles": "مقالات",
+    "highlights": "هایلایت‌ها",
+    "work": "همکاری",
+    "contact": "تماس"
+  },
+  "hero": {
+    "ctaProjects": "پروژه‌ها",
+    "ctaArticles": "مقالات",
+    "ctaContact": "تماس"
+  },
+  "sections": {
+    "about": "درباره من",
+    "now": "الان روی چی کار می‌کنم",
+    "skills": "مهارت‌ها",
+    "projects": "پروژه‌های منتخب",
+    "articles": "مقالات",
+    "highlights": "هایلایت‌ها",
+    "work": "برای همکاری",
+    "contact": "تماس"
+  },
+  "projects": {
+    "all": "همه",
+    "mobile": "موبایل",
+    "backend": "بک‌اند",
+    "experiments": "آزمایش‌ها"
+  },
+  "articles": {
+    "onSite": "داخل سایت",
+    "external": "خارجی"
+  },
+  "form": {
+    "name": "نام",
+    "email": "ایمیل",
+    "message": "پیام",
+    "send": "ارسال پیام",
+    "success": "پیام آماده شد و حالا ایمیل شما باز می‌شود.",
+    "copyEmail": "کپی ایمیل",
+    "emailCopied": "ایمیل کپی شد"
+  },
+  "theme": {
+    "dark": "تیره",
+    "light": "روشن"
+  }
+}
