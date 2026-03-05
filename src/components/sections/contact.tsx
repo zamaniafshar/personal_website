@@ -1,12 +1,12 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Copy, Github, Linkedin, Mail, MapPin, Send, Twitter } from 'lucide-react';
+import { Copy, Github, Instagram, Linkedin, Mail, MapPin, Send, Twitter } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useLanguage } from '@/context/language-context';
-import { content } from '@/data/content';
+import { content, personalInfo } from '@/data/content';
 import { GlassCard, Section } from '@/components/ui/primitives';
 
 const contactSchema = z.object({
@@ -17,7 +17,6 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const CONTACT_EMAIL = 'hello@arash.dev';
 
 export function Contact() {
   const { language } = useLanguage();
@@ -61,7 +60,7 @@ export function Contact() {
   };
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText(CONTACT_EMAIL);
+    await navigator.clipboard.writeText(personalInfo.email);
     setIsCopied(true);
 
     if (copyResetTimer.current) {
@@ -99,7 +98,7 @@ export function Contact() {
                   onClick={copyEmail}
                   className="font-mono text-lg text-white transition-colors hover:text-emerald-400"
                 >
-                  {CONTACT_EMAIL}
+                  {personalInfo.email}
                 </button>
               </div>
 
@@ -119,7 +118,7 @@ export function Contact() {
               </div>
               <div>
                 <span className="block text-sm font-medium uppercase tracking-wide text-slate-500">Location</span>
-                <span className="text-lg text-white">Tehran, Iran (Remote)</span>
+                <span className="text-lg text-white">{personalInfo.location}</span>
               </div>
             </div>
           </div>
@@ -128,7 +127,7 @@ export function Contact() {
 
           <div className="flex gap-4">
             <a
-              href="https://github.com"
+              href={personalInfo.github}
               target="_blank"
               rel="noreferrer"
               className="group cursor-pointer rounded-xl border border-white/10 p-3 transition-all hover:border-emerald-500/30 hover:bg-emerald-500/10"
@@ -137,22 +136,22 @@ export function Contact() {
               <Github size={24} className="text-slate-400 transition-colors group-hover:text-emerald-400" />
             </a>
             <a
-              href="https://twitter.com"
+              href={personalInfo.linkedin}
               target="_blank"
               rel="noreferrer"
               className="group cursor-pointer rounded-xl border border-white/10 p-3 transition-all hover:border-blue-500/30 hover:bg-blue-500/10"
-              aria-label="Twitter"
+              aria-label="Linkedin"
             >
-              <Twitter size={24} className="text-slate-400 transition-colors group-hover:text-blue-400" />
+              <Linkedin size={24} className="text-slate-400 transition-colors group-hover:text-blue-400" />
             </a>
             <a
-              href="https://linkedin.com"
+              href={personalInfo.instagram}
               target="_blank"
               rel="noreferrer"
               className="group cursor-pointer rounded-xl border border-white/10 p-3 transition-all hover:border-blue-700/30 hover:bg-blue-700/10"
-              aria-label="LinkedIn"
+              aria-label="Instagram"
             >
-              <Linkedin size={24} className="text-slate-400 transition-colors group-hover:text-blue-600" />
+              <Instagram size={24} className="text-slate-400 transition-colors group-hover:text-blue-600" />
             </a>
           </div>
         </div>
@@ -168,7 +167,7 @@ export function Contact() {
                 type="text"
                 {...register('name')}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-600 transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:outline-none"
-                placeholder="John Doe"
+                placeholder={t.name_hint}
               />
               {errors.name && <p className="mt-2 text-xs text-red-400">{t.name_error}</p>}
             </div>
@@ -182,7 +181,7 @@ export function Contact() {
                 type="email"
                 {...register('email')}
                 className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-600 transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:outline-none"
-                placeholder="john@example.com"
+                placeholder="amin@gmail.com"
               />
               {errors.email && <p className="mt-2 text-xs text-red-400">{t.email_error}</p>}
             </div>
@@ -195,7 +194,7 @@ export function Contact() {
                 id="message"
                 {...register('message')}
                 className="min-h-[120px] w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-600 transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:outline-none"
-                placeholder="Tell me about your project..."
+                placeholder={t.message_hint}
               />
               {errors.message && <p className="mt-2 text-xs text-red-400">{t.message_error}</p>}
             </div>

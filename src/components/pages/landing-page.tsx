@@ -7,7 +7,7 @@ import { Articles } from '@/components/sections/articles';
 import { Contact } from '@/components/sections/contact';
 import { Hero } from '@/components/sections/hero';
 import { Projects } from '@/components/sections/projects';
-import { Skills } from '@/components/sections/skills';
+import { Skills } from '@/components/sections/services';
 import { Work } from '@/components/sections/work';
 
 export function LandingPage() {

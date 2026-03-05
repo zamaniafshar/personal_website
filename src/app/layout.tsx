@@ -3,7 +3,7 @@ import { Providers } from './providers';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Arash | Personal Website',
+  title: 'Zamani Afshar | Personal Website',
   description: 'Personal website showcasing projects, articles, and ways to collaborate.'
 };
 

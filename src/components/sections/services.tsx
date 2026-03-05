@@ -7,24 +7,24 @@ import { GlassCard, Section } from '@/components/ui/primitives';
 
 export function Skills() {
   const { language } = useLanguage();
-  const t = content[language].skills;
+  const t = content[language].services;
 
-  const skillGroups = [
+  const itemGroups = [
     {
       title: t.mobile,
-      items: t.mobile_list,
+      desc: t.mobile_desc,
       icon: <Smartphone size={24} />,
       color: 'from-blue-500 to-indigo-600'
     },
     {
-      title: t.backend,
-      items: t.backend_list,
+      title: t.web,
+      desc: t.web_desc,
       icon: <Server size={24} />,
       color: 'from-emerald-500 to-teal-600'
     },
     {
-      title: t.learning,
-      items: t.learning_list,
+      title: t.desktop,
+      desc: t.desktop_desc,
       icon: <Brain size={24} />,
       color: 'from-fuchsia-500 to-pink-600'
     }
@@ -42,7 +42,7 @@ export function Skills() {
       </div>
 
       <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-3">
-        {skillGroups.map((group) => (
+        {itemGroups.map((group) => (
           <GlassCard
             key={group.title}
             className="group relative overflow-hidden border-slate-800 transition-all duration-500 hover:-translate-y-2"
@@ -57,14 +57,13 @@ export function Skills() {
               <h3 className="text-xl font-bold text-white">{group.title}</h3>
             </div>
 
-            <div className="relative z-10 space-y-3">
-              {group.items.map((skill) => (
-                <div key={skill} className="flex items-center gap-3">
-                  <div className={`h-2 w-2 rounded-full bg-gradient-to-r ${group.color}`} />
-                  <span className="font-medium text-slate-300 transition-colors group-hover:text-white">{skill}</span>
-                </div>
-              ))}
-            </div>
+            <span className="relative pr-5 inline-block group-hover:text-white">
+              <span
+                className={`absolute right-0 top-1 h-full w-0.5 rounded-sm bg-gradient-to-b ${group.color}`}
+              />
+              {group.desc}
+            </span>
+
 
             <div
               className={`absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-gradient-to-br ${group.color} opacity-10 blur-2xl transition-opacity duration-500 group-hover:opacity-20`}

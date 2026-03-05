@@ -1,13 +1,14 @@
 'use client';
 
-import { Calendar, Check, FileText, Mail } from 'lucide-react';
+import { Calendar, Check, FileText, Link, Mail } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
-import { content } from '@/data/content';
+import { content, personalInfo } from '@/data/content';
 import { GlassCard, Section } from '@/components/ui/primitives';
 
 export function Work() {
   const { language } = useLanguage();
   const t = content[language].work;
+
 
   return (
     <Section id="work" className="relative overflow-hidden py-24">
@@ -38,7 +39,7 @@ export function Work() {
 
           <div className="flex min-w-[240px] flex-col gap-4">
             <a
-              href="mailto:hello@arash.dev"
+              href={"mailto:" + personalInfo.email}
               className="flex w-full items-center justify-center gap-3 rounded-xl bg-emerald-500 px-6 py-4 font-bold text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all hover:bg-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]"
             >
               <Mail size={20} />
@@ -46,7 +47,7 @@ export function Work() {
             </a>
 
             <a
-              href="mailto:hello@arash.dev?subject=CV%20Request"
+              href={"mailto:" + personalInfo.email + "?subject=CV%20Request"}
               className="flex w-full items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-4 font-medium text-white transition-all hover:bg-white/10"
             >
               <FileText size={20} />
@@ -54,9 +55,7 @@ export function Work() {
             </a>
 
             <a
-              href="https://cal.com"
-              target="_blank"
-              rel="noreferrer"
+              href="#contact"
               className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-700 bg-slate-900 px-6 py-4 font-medium text-slate-300 transition-all hover:border-emerald-500/50 hover:text-emerald-400"
             >
               <Calendar size={20} />

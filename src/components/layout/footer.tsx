@@ -1,13 +1,13 @@
 'use client';
 
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Instagram, Linkedin, Twitter } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
-import { content } from '@/data/content';
+import { content, personalInfo } from '@/data/content';
 
 const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com', icon: Github },
-  { label: 'Twitter', href: 'https://twitter.com', icon: Twitter },
-  { label: 'LinkedIn', href: 'https://linkedin.com', icon: Linkedin }
+  { label: 'GitHub', href: personalInfo.github, icon: Github },
+  { label: 'Instagram', href: personalInfo.instagram, icon: Instagram },
+  { label: 'LinkedIn', href: personalInfo.linkedin, icon: Linkedin }
 ];
 
 export function Footer() {
@@ -18,7 +18,7 @@ export function Footer() {
     <footer className="border-t border-white/5 bg-slate-950 pb-8 pt-16">
       <div className="mx-auto flex max-w-7xl flex-col items-center px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-xl font-bold text-white shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-          A
+          Z
         </div>
 
         <div className="mb-8 flex gap-6">

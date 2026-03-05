@@ -8,7 +8,6 @@ import { Badge, GlassCard, Section } from '@/components/ui/primitives';
 export function About() {
   const { language } = useLanguage();
   const t = content[language].about;
-  const tNow = content[language].now;
 
   return (
     <Section id="about" className="relative">
@@ -20,15 +19,6 @@ export function About() {
           </h2>
 
           <p className="mb-8 text-lg leading-relaxed text-slate-300">{t.bio}</p>
-
-          <div className="mb-8 space-y-4">
-            {t.what_i_do.map((item) => (
-              <div key={item} className="group flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-emerald-500 transition-transform group-hover:scale-110" />
-                <span className="text-slate-400 transition-colors group-hover:text-emerald-300">{item}</span>
-              </div>
-            ))}
-          </div>
 
           <div className="flex flex-wrap gap-2">
             {t.chips.map((chip) => (
@@ -44,37 +34,23 @@ export function About() {
         </div>
 
         <div className="space-y-6">
-          <GlassCard className="relative border-emerald-500/20 bg-emerald-950/20">
-            <div className="absolute right-0 top-0 p-4 opacity-10">
-              <Clock size={80} />
-            </div>
-
-            <h3 className="mb-4 flex items-center gap-2 text-xl font-bold text-white">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
-              {tNow.title}
-            </h3>
-
-            <ul className="relative z-10 space-y-3">
-              {tNow.items.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-3 border-b border-white/5 pb-2 text-sm text-slate-300 last:border-0 last:pb-0"
-                >
-                  <Terminal size={14} className="text-emerald-500/70" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </GlassCard>
+          <div className="mb-8 space-y-4">
+            {t.what_i_do.map((item) => (
+              <div key={item} className="group flex items-start gap-3">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-emerald-500 transition-transform group-hover:scale-110" />
+                <span className="text-slate-400 transition-colors group-hover:text-emerald-300">{item}</span>
+              </div>
+            ))}
+          </div>
 
           <div className="grid grid-cols-2 gap-4">
             <GlassCard className="flex flex-col items-center justify-center p-4 text-center">
               <span className="mb-1 text-4xl font-bold text-emerald-400">5+</span>
-              <span className="text-xs uppercase tracking-widest text-slate-400">Years Exp</span>
+              <span className="text-xs uppercase tracking-widest text-slate-400">{t.yearsExp}</span>
             </GlassCard>
             <GlassCard className="flex flex-col items-center justify-center p-4 text-center">
               <span className="mb-1 text-4xl font-bold text-teal-400">20+</span>
-              <span className="text-xs uppercase tracking-widest text-slate-400">Projects</span>
+              <span className="text-xs uppercase tracking-widest text-slate-400">{t.projects}</span>
             </GlassCard>
           </div>
         </div>

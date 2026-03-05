@@ -90,8 +90,8 @@ export function Hero() {
 
           <div className="absolute inset-8 overflow-hidden rounded-full border-2 border-emerald-500/50 bg-slate-900 shadow-[0_0_50px_rgba(16,185,129,0.2)]">
             <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=900"
-              alt="Arash"
+              src="/profile_pic.jpeg"
+              alt="Z"
               fill
               className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
               sizes="(max-width: 768px) 320px, 384px"

@@ -91,7 +91,7 @@ export function Projects() {
                   />
 
                   <div className="absolute inset-0 z-20 flex items-center justify-center gap-4 bg-slate-950/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
-                    <a
+                    {project.demoUrl.length != 0 && <a
                       href={project.demoUrl}
                       target="_blank"
                       rel="noreferrer"
@@ -99,8 +99,8 @@ export function Projects() {
                       aria-label="Open project demo"
                     >
                       <ExternalLink size={20} />
-                    </a>
-                    <a
+                    </a>}
+                    {project.repoUrl.length != 0 && <a
                       href={project.repoUrl}
                       target="_blank"
                       rel="noreferrer"
@@ -108,7 +108,7 @@ export function Projects() {
                       aria-label="Open project repository"
                     >
                       <Github size={20} />
-                    </a>
+                    </a>}
                   </div>
                 </div>
 

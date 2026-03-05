@@ -24,6 +24,14 @@ export interface Article {
   externalUrl?: string;
 }
 
+export const personalInfo = {
+  email: "zamani3509@gmail.com",
+  location: "Kerman, Iran (Remote)",
+  github: "",
+  linkedin: "",
+  instagram: "",
+}
+
 export const content = {
   fa: {
     nav: {
@@ -35,9 +43,9 @@ export const content = {
       contact: 'تماس'
     },
     hero: {
-      greeting: 'سلام، من آرش هستم',
-      role: 'توسعه‌دهنده موبایل و وب',
-      description: '۵ سال تجربه در دات‌نت، در حال یادگیری وب مدرن.',
+      greeting: 'سلام، من امین زمانی افشار هستم',
+      role: 'یک برنامه نویس',
+      description: 'با بیش از ۵ سال تجربه در ساخت اپلیکیشن های مدرن و کارآمد',
       cta_projects: 'مشاهده پروژه‌ها',
       cta_articles: 'خواندن مقالات',
       hud_online: 'آنلاین',
@@ -47,32 +55,25 @@ export const content = {
     },
     about: {
       title: 'درباره من',
-      bio: 'من یک توسعه‌دهنده نرم‌افزار با اشتیاق به ساخت رابط‌های کاربری زیبا و کاربردی هستم. تمرکز اصلی من بر روی اکوسیستم دات‌نت بوده است، اما اکنون با هیجان به دنیای وب مدرن و ریکت وارد شده‌ام.',
+      bio: 'من یک توسعه‌دهنده نرم‌افزار با اشتیاق به ساخت رابط‌های کاربری زیبا و کاربردی هستم. تمرکز اصلی من بر روی ساخت اپلیکیشن های موبایل بوده است، اما اکنون با هیجان به دنیای بک اند و فرانت اند وارد شده‌ام.',
       what_i_do: [
-        'توسعه اپلیکیشن‌های موبایل با زامارین و دات‌نت مائوی',
-        'طراحی و پیاده‌سازی بک‌ند با ASP.NET Core',
-        'یادگیری و تجربه با React و Next.js',
-        'طراحی رابط کاربری تمیز و مدرن'
+        'توسعه اپلیکیشن‌های  کراس پلتفرم با استفاده از فلاتر',
+        'توسعه اپلیکیشن های نیتیو برای پلتفرم های Android & IOS',
+        'طراحی و توسعه بک‌اند‌های پیچیده و مقیاس‌پذیر با ASP.NET Core ',
+        'درحال یادگیری و کسب تجربه با React و Next.js',
       ],
-      chips: ['توسعه‌دهنده', 'گیمر', 'عاشق قهوه', 'کدنویس شبانه']
+      chips: ['کدنویسی 👨🏻‍💻', 'گیم 🎮', 'عاشق قهوه ☕️', 'طبیعت 🌳'],
+      yearsExp: "سال تجربه",
+      projects: "پروژه"
     },
-    now: {
-      title: 'الان مشغول چه کاری هستم؟',
-      items: [
-        'در حال یادگیری عمیق React و Tailwind CSS',
-        'کار روی یک پروژه شخصی مدیریت مالی',
-        'خواندن کتاب "Clean Architecture"',
-        'هدف بعدی: یادگیری Three.js'
-      ]
-    },
-    skills: {
-      title: 'مهارت‌ها',
-      mobile: 'موبایل',
-      backend: 'بک‌ند',
-      learning: 'در حال یادگیری',
-      mobile_list: ['Xamarin', '.NET MAUI', 'MVVM Cross', 'SQLite'],
-      backend_list: ['C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'Redis'],
-      learning_list: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Figma']
+    services: {
+      title: 'من چه کاری میتونم برات کنم؟',
+      mobile: 'اپلیکیشن های موبایل',
+      web: 'طراحی وبسایت',
+      desktop: 'نرم افزار های دسکتاپ',
+      mobile_desc: "با تخصص در توسعه اپلیکیشن‌های موبایل، می‌توانم برنامه‌های کاربردی جذاب  برای سیستم‌عامل‌های ای او اس  و اندروید طراحی کنم. اعم از برنامه‌های نیتیو یا کراس‌پلتفرم، من برنامه‌هایی با بهینه‌سازی عملکرد، امنیت و قابلیت مقیاس‌پذیری ایجاد می‌کنم که نیازهای شما را برآورده کند.",
+      web_desc: "به دنبال ساخت وب اپلیکیشنی منحصر به‌ فرد که با نیازهای شما هماهنگ باشد هستید؟  من در طراحی و توسعه برنامه‌های وب پویا و سفارشی تخصص دارم و  با توجه به هدف‌ها  و نیازهای کاربران شما،  می‌توانم برنامه‌های وب ساده یا پیچیده  منطبق با نیاز های شما طراحی و توسعه دهم.",
+      desktop_desc: "به عنوان یک توسعه‌دهنده دسکتاپ، من برنامه‌هایی  با طراحی مدرن  و قابل اعتماد ایجاد می‌کنم که نیازهای شما را برآورده می‌کنند. اعم از برنامه‌های مستقل تا نرم‌افزار سطح شرکتی، من برنامه‌هایی را ساخته و طراحی می‌کنم که در هر محیطی به خوبی عمل کنند.",
     },
     projects: {
       title: 'پروژه‌های منتخب',
@@ -111,11 +112,13 @@ export const content = {
       toast_success: 'پیام شما با موفقیت ارسال شد!',
       name_error: 'نام باید حداقل ۲ کاراکتر باشد.',
       email_error: 'یک ایمیل معتبر وارد کنید.',
-      message_error: 'پیام باید حداقل ۱۰ کاراکتر باشد.'
+      message_error: 'پیام باید حداقل ۱۰ کاراکتر باشد.',
+      message_hint: "درباره پروژت یا ایدت بهم بگو ...",
+      name_hint: "امین زمانی افشار"
     },
     footer: {
       rights: '© ۱۴۰۴ تمامی حقوق محفوظ است.',
-      built_with: 'طراحی شده با فیگما، ساخته شده با عشق و کد.'
+      built_with: 'ساخته شده با ☕️ + ❤️'
     }
   },
   en: {
@@ -128,7 +131,7 @@ export const content = {
       contact: 'Contact'
     },
     hero: {
-      greeting: "Hi, I'm Arash",
+      greeting: "Hi, I'm Amin Zamani Afshar",
       role: 'Mobile & Web Developer',
       description: '5 years experience in .NET, diving into modern web.',
       cta_projects: 'View Projects',
@@ -147,25 +150,18 @@ export const content = {
         'Learning and experimenting with React & Next.js',
         'Clean and modern UI design'
       ],
-      chips: ['Developer', 'Gamer', 'Coffee Lover', 'Night Coder']
+      chips: ['Developer', 'Gamer', 'Coffee Lover', 'Night Coder'],
+      yearsExp: "Years Exp",
+      projects: "Projects"
     },
-    now: {
-      title: "What I'm doing now?",
-      items: [
-        'Deep diving into React & Tailwind CSS',
-        'Working on a personal finance management project',
-        'Reading "Clean Architecture"',
-        'Next goal: Learning Three.js'
-      ]
-    },
-    skills: {
-      title: 'Skills',
-      mobile: 'Mobile',
-      backend: 'Backend',
-      learning: 'Learning',
-      mobile_list: ['Xamarin', '.NET MAUI', 'MVVM Cross', 'SQLite'],
-      backend_list: ['C#', 'ASP.NET Core', 'Entity Framework', 'SQL Server', 'Redis'],
-      learning_list: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Figma']
+    services: {
+      title: "How Can I Help You?",
+      mobile: "Mobile App Development",
+      web: "Website Design & Development",
+      desktop: "Desktop Application Development",
+      mobile_desc: "I specialize in crafting engaging mobile applications for both iOS and Android platforms. Whether you need native or cross-platform solutions, I build optimized, secure, and scalable apps that meet your specific requirements.",
+      web_desc: "Looking for a unique web application perfectly aligned with your needs? I specialize in designing and developing dynamic, custom web applications.  I’ll work with you to understand your goals and user needs, creating web solutions – from simple to complex – tailored to your vision.",
+      desktop_desc: "As a desktop application developer, I create modern and reliable software solutions to meet your business needs. From standalone applications to enterprise-level software, I build and design programs that perform flawlessly in any environment.",
     },
     projects: {
       title: 'Featured Projects',
@@ -204,7 +200,9 @@ export const content = {
       toast_success: 'Message sent successfully!',
       name_error: 'Name must be at least 2 characters.',
       email_error: 'Please enter a valid email address.',
-      message_error: 'Message must be at least 10 characters.'
+      message_error: 'Message must be at least 10 characters.',
+      message_hint: "Tell me about your project ...",
+      name_hint: "Amin Zamani Afshar"
     },
     footer: {
       rights: '© 2026 All rights reserved.',
@@ -216,43 +214,55 @@ export const content = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: { en: 'Crypto Wallet App', fa: 'کیف پول ارز دیجیتال' },
-    desc: { en: 'A secure mobile wallet built with .NET MAUI.', fa: 'یک کیف پول امن موبایل ساخته شده با دات‌نت مائوی.' },
-    tags: ['Mobile', '.NET MAUI', 'C#'],
+    title: { en: 'SignalECU', fa: 'SignalECU' },
+    desc: {
+      en: 'A secure mobile wallet built with .NET MAUI.',
+      fa: 'اپلیکیشن عیب‌یابی و آموزش ماشین‌آلات سنگین، توسعه داده شده با فلاتر برای اندروید و ای او اس.'
+    },
+    tags: ['Mobile', 'Flutter', 'Article Rendering'],
     category: 'mobile',
-    image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=1200',
-    demoUrl: 'https://example.com/projects/crypto-wallet',
-    repoUrl: 'https://github.com'
+    image: '/projects/signal_ecu_banner.png',
+    demoUrl: 'https://signalecu.ir/',
+    repoUrl: ''
   },
   {
     id: 2,
-    title: { en: 'E-commerce Dashboard', fa: 'داشبورد فروشگاهی' },
-    desc: { en: 'Admin panel for managing products and orders.', fa: 'پنل مدیریت برای مدیریت محصولات و سفارشات.' },
-    tags: ['Web', 'React', 'Tailwind'],
-    category: 'web',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200',
-    demoUrl: 'https://example.com/projects/ecommerce-dashboard',
-    repoUrl: 'https://github.com'
+    title: { en: 'E-commerce Dashboard', fa: 'SPtimer | Smart Pomodoro Timer' },
+    desc: {
+      en: 'Admin panel for managing products and orders.',
+      fa: 'اپلیکیشن اوپن سورس توسعه‌یافته با فلاتر، با بیش از ۱۰,۰۰۰ نصب در بازار، با استفاده از تکنیک پومودورو به کاربران کمک می‌کند تا تمرکز خود را افزایش داده و خستگی در حین انجام کارهای روزانه را کاهش دهند، تا بتوانند به نتایج بهتری دست یابند.'
+    },
+    tags: ['Mobile', 'Flutter', 'Open Source'],
+    category: 'mobile',
+    image: '/projects/sptimer_banner.png',
+    demoUrl: 'https://cafebazaar.ir/app/smart.pomodoro.timer',
+    repoUrl: 'https://github.com/zamaniafshar/sptimer'
   },
   {
     id: 3,
-    title: { en: 'Task Manager API', fa: 'API مدیریت وظایف' },
-    desc: { en: 'High-performance REST API with ASP.NET Core.', fa: 'رست ای‌پی‌آی با کارایی بالا با ASP.NET Core.' },
-    tags: ['Backend', 'ASP.NET Core', 'SQL'],
-    category: 'backend',
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200',
-    demoUrl: 'https://example.com/projects/task-manager-api',
-    repoUrl: 'https://github.com'
+    title: { en: 'Task Manager API', fa: 'Bong Music' },
+    desc: {
+      en: 'High-performance REST API with ASP.NET Core.',
+      fa: 'یک موزیک‌پلیر کراس پلتفرم با قابلیت استعداد‌یابی مشابه اپلیکیشن StarMaker. این برنامه به کاربران امکان می‌دهد تا موزیک گوش کنند، موزیک‌ویدئو بسازند و استعداد خود را به نمایش بگذارند. دارای قابلیت‌هایی مانند ضبط و ادیت صدا، ایجاد پروفایل شخصی و اشتراک‌گذاری محتوا و ... میباشد.'
+    },
+    tags: ['Music Player', 'Flutter', 'Talent Finder'],
+    category: 'mobile',
+    image: '/projects/bongmusic_banner.png',
+    demoUrl: 'https://github.com/zamaniafshar/project-showcase/tree/main/BongMusicApp',
+    repoUrl: ''
   },
   {
     id: 4,
-    title: { en: 'Fitness Tracker', fa: 'ردیاب تناسب اندام' },
-    desc: { en: 'Track your workouts and diet progress.', fa: 'پیگیری تمرینات و پیشرفت رژیم غذایی.' },
-    tags: ['Mobile', 'Xamarin', 'Azure'],
+    title: { en: 'Fitness Tracker', fa: 'Infi Talk' },
+    desc: {
+      en: 'Track your workouts and diet progress.',
+      fa: 'اپلیکیشن مترجم کراس پلتفرم با بهره‌گیری از هوش مصنوعی Azure برای ترجمه دقیق و سریع. این برنامه با طراحی زیبا و کاربرپسند، امکان ترجمه بیش از ۱۰۰ زبان زنده دنیا را فراهم می‌کند. قابلیت‌های کلیدی شامل ترجمه صوتی، تبدیل ویس به متن، و ترجمه آنی است که تجربه‌ای روان و کاربردی برای کاربران ایجاد می‌کند.'
+    },
+    tags: ['Mobile', 'Translator', 'Flutter'],
     category: 'mobile',
-    image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=1200',
-    demoUrl: 'https://example.com/projects/fitness-tracker',
-    repoUrl: 'https://github.com'
+    image: '/projects/infitalk_banner.png',
+    demoUrl: '',
+    repoUrl: 'https://github.com/zamaniafshar/project-showcase/tree/main/InfiTalk'
   },
   {
     id: 5,
@@ -260,18 +270,18 @@ export const projects: Project[] = [
     desc: { en: 'Minimalist blog built with Next.js.', fa: 'وبلاگ مینیمال ساخته شده با Next.js.' },
     tags: ['Web', 'Next.js', 'MDX'],
     category: 'web',
-    image: 'https://images.unsplash.com/photo-1499750310159-52f8f6152133?auto=format&fit=crop&q=80&w=1200',
-    demoUrl: 'https://example.com/projects/personal-blog',
-    repoUrl: 'https://github.com'
+    image: '/projects/personal_website_banner.png',
+    demoUrl: '',
+    repoUrl: ''
   },
   {
     id: 6,
-    title: { en: 'Chat Application', fa: 'اپلیکیشن چت' },
-    desc: { en: 'Real-time chat using SignalR.', fa: 'چت بلادرنگ با استفاده از SignalR.' },
-    tags: ['Backend', 'SignalR', 'Redis'],
+    title: { en: 'Chat Application', fa: 'ECommerce | فروشگاه' },
+    desc: { en: 'Real-time chat using SignalR.', fa: 'بک اند پیاده شده با دات نت برا ی فروشگاه مشابه دیجی کالا' },
+    tags: ['Backend', 'Asp .Net Core', 'Web Api'],
     category: 'backend',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200',
-    demoUrl: 'https://example.com/projects/chat-app',
+    image: '/projects/sptimer_banner.png',
+    demoUrl: '',
     repoUrl: 'https://github.com'
   }
 ];

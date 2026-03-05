@@ -39,9 +39,9 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex flex-shrink-0 cursor-pointer items-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 font-bold text-white shadow-[0_0_15px_rgba(16,185,129,0.5)]">
-              A
+              Z
             </div>
-            <span className="hidden font-semibold tracking-wide text-white sm:block">{language === 'fa' ? 'آرش' : 'Arash'}</span>
+            <span className="hidden font-semibold tracking-wide text-white sm:block">{language === 'fa' ? 'زمانی افشار' : 'Zamani Afshar'}</span>
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
