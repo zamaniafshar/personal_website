@@ -1,16 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   eslint: {
     ignoreDuringBuilds: true
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com'
-      }
-    ]
-  }
+    loader: 'custom',
+    loaderFile: './src/loader.js',  // or wherever you put it
+    // remotePatterns can stay, but they'll be ignored in static export
+  },
 };
 
 export default nextConfig;
