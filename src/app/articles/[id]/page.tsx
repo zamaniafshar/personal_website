@@ -18,10 +18,3 @@ export default function ArticlePage({ params }: ArticlePageProps) {
 
   return <ArticleDetailPage articleId={articleId} />;
 }
-
-
-
-export async function generateStaticParams() {
-  var ids=articles.map(article=>article.id.toString())
- return ids.map(id => ({ id }));
-}
