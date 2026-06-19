@@ -227,6 +227,32 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: { en: 'Explore Hub', fa: 'اکسپلور هاب' },
+    desc: {
+      en: 'A digital marketplace e-commerce website developed with Next.js for selling digital products like gaming accounts, Spotify, and AI accounts.',
+      fa: 'وبسایت فروشگاهی توسعه‌یافته با Next.js برای فروش محصولات دیجیتال مانند اکانت‌های گیمینگ، اسپاتیفای، هوش مصنوعی و غیره.'
+    },
+    tags: ['Web', 'Next.js', 'Tailwind CSS', 'E-commerce'],
+    category: 'web',
+    image: '/projects/explorehub_page_banner.png',
+    demoUrl: 'https://explorehub.ir/',
+    repoUrl: ''
+  },
+  {
+    id: 3,
+    title: { en: 'Badankhoba Telegram Bot', fa: 'ربات تلگرام بدنخوبا' },
+    desc: {
+      en: 'A Telegram bot for getting personalized workout plans and watching exercise tutorials for the Badankhoba fitness brand.',
+      fa: 'ربات تلگرام ثبت‌نام، دریافت برنامه تمرینی و تغذیه اختصاصی و مشاهده ویدیوهای آموزشی تیم بدنخوبا که با دات‌نت توسعه یافته است.'
+    },
+    tags: ['Telegram Bot', '.NET', 'C#', 'Backend'],
+    category: 'backend',
+    image: '/projects/badankhoba_banner.jpeg',
+    demoUrl: 'https://t.me/Badankhooba_Bot',
+    repoUrl: ''
+  },
+  {
+    id: 4,
     title: { en: 'E-commerce Dashboard', fa: 'SPtimer | Smart Pomodoro Timer' },
     desc: {
       en: 'Admin panel for managing products and orders.',
@@ -239,7 +265,7 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/zamaniafshar/sptimer'
   },
   {
-    id: 3,
+    id: 5,
     title: { en: 'Task Manager API', fa: 'Bong Music' },
     desc: {
       en: 'High-performance REST API with ASP.NET Core.',
@@ -252,7 +278,7 @@ export const projects: Project[] = [
     repoUrl: ''
   },
   {
-    id: 4,
+    id: 6,
     title: { en: 'Fitness Tracker', fa: 'Infi Talk' },
     desc: {
       en: 'Track your workouts and diet progress.',
@@ -265,7 +291,7 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/zamaniafshar/project-showcase/tree/main/InfiTalk'
   },
   {
-    id: 5,
+    id: 7,
     title: { en: 'Personal Blog', fa: 'وبلاگ شخصی' },
     desc: { en: 'Minimalist blog built with Next.js.', fa: 'وبلاگ مینیمال ساخته شده با Next.js.' },
     tags: ['Web', 'Next.js', 'MDX'],
@@ -273,17 +299,18 @@ export const projects: Project[] = [
     image: '/projects/personal_website_banner.png',
     demoUrl: '',
     repoUrl: ''
-  },
-  {
-    id: 6,
-    title: { en: 'Chat Application', fa: 'ECommerce | فروشگاه' },
-    desc: { en: 'Real-time chat using SignalR.', fa: 'بک اند پیاده شده با دات نت برا ی فروشگاه مشابه دیجی کالا' },
-    tags: ['Backend', 'Asp .Net Core', 'Web Api'],
-    category: 'backend',
-    image: '/projects/sptimer_banner.png',
-    demoUrl: '',
-    repoUrl: 'https://github.com'
   }
+  // {
+  //   id: 8,
+  //   title: { en: 'Chat Application', fa: 'ECommerce | فروشگاه' },
+  //   desc: { en: 'Real-time chat using SignalR.', fa: 'بک اند پیاده شده با دات نت برا ی فروشگاه مشابه دیجی کالا' },
+  //   tags: ['Backend', 'Asp .Net Core', 'Web Api'],
+  //   category: 'backend',
+  //   image: '/projects/sptimer_banner.png',
+  //   demoUrl: '',
+  //   repoUrl: 'https://github.com'
+  // }
+
 ];
 
 export const articles: Article[] = [
