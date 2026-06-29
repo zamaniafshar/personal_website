@@ -24,85 +24,146 @@ export interface Article {
   externalUrl?: string;
 }
 
-export const personalInfo = {
-  email: "zamani3509@gmail.com",
-  location: "Kerman, Iran (Remote)",
-  github: "",
-  linkedin: "",
-  instagram: "",
+export interface ExperienceItem {
+  id: number;
+  role: LocalizedText;
+  company: LocalizedText;
+  period: LocalizedText;
+  type: LocalizedText;
+  points: LocalizedText[];
 }
+
+export interface Testimonial {
+  id: number;
+  name: LocalizedText;
+  role: LocalizedText;
+  rating: number;
+  quote: LocalizedText;
+  /** optional avatar path under /public, e.g. /testimonials/ali.jpg */
+  avatar?: string;
+}
+
+export const personalInfo = {
+  name: { en: 'Amin Zamani Afshar', fa: 'امین زمانی افشار' } as LocalizedText,
+  email: 'zamani3509@gmail.com',
+  phone: '',
+  location: { en: 'Kerman, Iran · Remote', fa: 'کرمان، ایران · دورکاری' } as LocalizedText,
+  github: 'https://github.com/zamaniafshar',
+  linkedin: '',
+  instagram: '',
+  telegram: '',
+  // Leave empty to fall back to an email link. Drop in a Calendly / Cal.com URL to enable booking.
+  bookingUrl: '',
+  // Optional: link to a hosted PDF résumé. Falls back to an email request when empty.
+  cvUrl: ''
+};
 
 export const content = {
   fa: {
     nav: {
       home: 'خانه',
       about: 'درباره من',
+      services: 'خدمات',
       projects: 'پروژه‌ها',
-      articles: 'مقالات',
-      work: 'همکاری',
+      experience: 'تجربه',
+      testimonials: 'نظرها',
       contact: 'تماس'
     },
+    theme: {
+      to_light: 'حالت روشن',
+      to_dark: 'حالت تیره'
+    },
     hero: {
-      greeting: 'امین زمانی افشار',
-      role: 'توسعه‌دهنده فول‌استک',
-      description: 'وب‌سایتی که نتیجه بده، بک‌اندی قابل‌اعتماد، یا رباتی که کارهای تکراری رو خودکار کنه؟ من اینها رو برای کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل می‌سازم؛ از ایده تا محصول نهایی، با بیش از ۵ سال تجربه.',
-      cta_projects: 'مشاهده پروژه‌ها',
-      cta_articles: 'خواندن مقالات',
-      hud_online: 'آنلاین',
-      hud_build: 'نسخه ۲.۱.۴',
-      hud_latency: '۱۲ میلی‌ثانیه',
-      signature: 'در حال اجرای سیستم...'
+      available: 'آماده‌ی پروژه‌های جدید',
+      greeting: 'سلام، من امین زمانی افشار هستم',
+      role: 'مهندس نرم‌افزار — وب‌سایت، بک‌اند و ربات تلگرام',
+      description:
+        'ایده‌ات را به محصولی واقعی تبدیل می‌کنم که واقعاً کار می‌کند؛ وب‌سایتی که نتیجه می‌دهد، بک‌اندی که می‌توانی به آن تکیه کنی و رباتی که کارهای تکراری را خودکار می‌کند. بیش از ۵ سال است که کنار کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل ایستاده‌ام تا ایده‌ها را از کاغذ به محصول برسانم.',
+      cta_projects: 'دیدن پروژه‌ها',
+      cta_contact: 'بیا پروژه‌ات را شروع کنیم',
+      cta_book: 'یک زمان مناسب انتخاب کن 😊',
+      stat_years: 'سال تجربه',
+      stat_projects: 'پروژه‌ی انجام‌شده',
+      stat_clients: 'مشتری راضی'
     },
     about: {
       title: 'درباره من',
-      bio: 'از وقتی برنامه‌نویسی رو شروع کردم، چیزی که همیشه برام لذت‌بخش بوده، دیدن یه ایده‌ست که از روی کاغذ میاد بیرون و تبدیل به یه محصول واقعی می‌شه که آدم‌ها ازش استفاده می‌کنن. برای همین بیش از ۵ ساله که کنار کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل می‌ایستم تا نیازشون رو به وب‌سایت، بک‌اند یا اپلیکیشنی تبدیل کنم که واقعاً کار می‌کنه. تخصص اصلی من ساخت وب‌سایت و بک‌اندهای قدرتمنده، و یکی از حوزه‌هایی که بیشتر از همه روش تمرکز دارم ساخت ربات‌های تلگرامه؛ چون می‌دونم چقدر می‌تونه فرایندهای یه کسب‌وکار رو ساده‌تر کنه. در کنار این‌ها، تجربه عملی در ساخت اپلیکیشن موبایل هم دارم.',
+      kicker: 'بیایید آشنا شویم',
+      bio:
+        'از وقتی برنامه‌نویسی را شروع کردم، چیزی که همیشه برایم لذت‌بخش بوده دیدن یک ایده‌ست که از روی کاغذ می‌آید بیرون و تبدیل به یک محصول واقعی می‌شود که آدم‌ها ازش استفاده می‌کنند. برای همین بیش از ۵ سال است که کنار کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل می‌ایستم تا نیازشان را به وب‌سایت، بک‌اند یا اپلیکیشنی تبدیل کنم که واقعاً کار می‌کند.',
+      bio2:
+        'تخصص اصلی من ساخت وب‌سایت‌ها و بک‌اندهای قدرتمند است و یکی از حوزه‌هایی که بیش از همه رویش تمرکز دارم ساخت ربات‌های تلگرام است؛ چون می‌دانم چقدر می‌تواند فرایندهای یک کسب‌وکار را ساده‌تر کند. در کنار این‌ها، تجربه‌ی عملی در ساخت اپلیکیشن موبایل هم دارم.',
+      what_i_do_title: 'چه کارهایی انجام می‌دهم',
       what_i_do: [
-        'توسعه اپلیکیشن‌های  کراس پلتفرم با استفاده از فلاتر',
-        'توسعه اپلیکیشن های نیتیو برای پلتفرم های Android & IOS',
-        'طراحی و توسعه بک‌اند‌های پیچیده و مقیاس‌پذیر با ASP.NET Core ',
-        'توسعه وب سایت های مدرن و کارآمد با React و Next.js',
+        'وب‌سایت و وب‌اپلیکیشن — با React و Next.js',
+        'بک‌اند و API امن و مقیاس‌پذیر — با ASP.NET Core و دات‌نت',
+        'ربات تلگرام و اتوماسیون — تخصص اصلی من',
+        'اپلیکیشن موبایل — با فلاتر، برای اندروید و iOS'
       ],
-      chips: ['کدنویسی 👨🏻‍💻', 'گیم 🎮', 'عاشق قهوه ☕️', 'طبیعت 🌳'],
-      yearsExp: "سال تجربه",
-      projects: "پروژه"
+      chips: ['کدنویسی 👨🏻‍💻', 'گیم 🎮', 'عاشق قهوه ☕️', 'طبیعت 🌳']
     },
     services: {
+      kicker: 'خدمات من',
       title: 'چه کاری می‌تونم برات انجام بدم؟',
+      subtitle: 'هر چیزی که کسب‌وکارت لازم دارد را از صفر تا انتشار کنارت می‌سازم.',
       mobile: 'اپلیکیشن موبایل',
       web: 'وب‌سایت و بک‌اند',
       bot: 'ربات‌های تلگرام',
-      mobile_desc: "اپلیکیشنی برای آیفون یا اندروید نیاز داری که سریع، امن و بدون مشکل اجرا بشه؟ من طراحی و توسعه‌ش رو از صفر تا انتشار برات انجام می‌دم.",
-      web_desc: "از یه وب‌سایت ساده گرفته تا سیستمی پیچیده با بک‌اندی مقیاس‌پذیر، هر چی کسب‌وکارت بهش نیاز داره رو طراحی و پیاده‌سازی می‌کنم؛ سریع، امن و آماده برای رشد.",
-      bot_desc: "می‌خوای فرایندهای تکراری رو خودکار کنی یا مستقیم با مشتری‌هات روی تلگرام در ارتباط باشی؟ این دقیقاً همون چیزیه که توش تخصص دارم؛ از ربات فروشگاهی تا سیستم‌های مدیریتی هوشمند.",
+      mobile_desc:
+        'اپلیکیشنی برای آیفون یا اندروید نیاز داری که سریع، امن و بدون مشکل اجرا بشه؟ طراحی و توسعه‌اش را از صفر تا انتشار برات انجام می‌دم.',
+      web_desc:
+        'از یک وب‌سایت ساده گرفته تا سیستمی پیچیده با بک‌اندی مقیاس‌پذیر، هر چی کسب‌وکارت بهش نیاز داره را طراحی و پیاده‌سازی می‌کنم؛ سریع، امن و آماده برای رشد.',
+      bot_desc:
+        'می‌خوای فرایندهای تکراری را خودکار کنی یا مستقیم با مشتری‌هات روی تلگرام در ارتباط باشی؟ این دقیقاً همان چیزیه که توش تخصص دارم؛ از ربات فروشگاهی تا سیستم‌های مدیریتی هوشمند.'
     },
     projects: {
+      kicker: 'نمونه‌کارها',
       title: 'پروژه‌های منتخب',
+      subtitle: 'گزیده‌ای از چیزهایی که با علاقه ساخته‌ام و منتشر کرده‌ام.',
       filter_all: 'همه',
       filter_mobile: 'موبایل',
       filter_web: 'وب',
-      filter_backend: 'بک‌ند',
+      filter_backend: 'بک‌اند',
       spotlight: 'پروژه ویژه',
-      view_projects: 'مشاهده پروژه‌ها'
+      view_demo: 'مشاهده',
+      view_code: 'کد'
+    },
+    experience: {
+      kicker: 'مسیر کاری',
+      title: 'تجربه‌ی من',
+      subtitle: 'جایی که یاد گرفتم، رشد کردم و محصول ساختم.'
+    },
+    testimonials: {
+      kicker: 'اعتماد دیگران',
+      title: 'دیگران درباره‌ی من چه می‌گویند؟',
+      subtitle:
+        'هیچ چیز دلگرم‌کننده‌تر از شنیدن نظر کسانی نیست که با آن‌ها کار کرده‌ام. 💛'
     },
     articles: {
+      kicker: 'بلاگ',
       title: 'آخرین مقالات',
+      subtitle: 'هر چیزی که یاد می‌گیرم را اینجا می‌نویسم.',
       tab_site: 'در این سایت',
       tab_external: 'ویرگول / مدیوم',
       read_more: 'ادامه مطلب',
       external_read: 'مطالعه در منبع خارجی'
     },
     work: {
-      title: 'همکاری با من',
+      kicker: 'بیا با هم کار کنیم',
+      title: 'آماده‌ای پروژه‌ات را شروع کنی؟',
       subtitle: 'ایده‌ای تو ذهنته؟ بیا با هم شروعش کنیم.',
       types: ['تمام‌وقت', 'پروژه‌ای', 'مشاوره'],
-      help_text: 'هر چی باشه؛ یه وب‌سایت ساده، یه بک‌اند پیچیده، یه ربات تلگرام یا یه اپلیکیشن موبایل، کنارتم تا از ایده به یه محصول واقعی برسیم.',
+      help_text:
+        'هر چی باشه؛ یه وب‌سایت ساده، یه بک‌اند پیچیده، یه ربات تلگرام یا یه اپلیکیشن موبایل، کنارتم تا از ایده به یه محصول واقعی برسیم.',
       cta_email: 'ارسال ایمیل',
       cta_cv: 'دانلود رزومه',
-      cta_call: 'رزرو مشاوره'
+      cta_call: 'رزرو جلسه'
     },
     contact: {
-      title: 'تماس با من',
-      description: 'پروژه‌ای تو ذهنته یا فقط می‌خوای حرف بزنیم؟ خوشحال می‌شم بشنوم. بیایید یک پروژه شروع کنیم 🚀',
+      kicker: 'تماس',
+      title: 'مشتاق شنیدن از تو هستم',
+      description:
+        'پروژه‌ای تو ذهنته یا فقط می‌خوای حرف بزنیم؟ خوشحال می‌شم بشنوم. بیایید یک پروژه شروع کنیم 🚀',
       name_label: 'نام شما',
       email_label: 'ایمیل',
       message_label: 'پیام',
@@ -113,85 +174,122 @@ export const content = {
       name_error: 'نام باید حداقل ۲ کاراکتر باشد.',
       email_error: 'یک ایمیل معتبر وارد کنید.',
       message_error: 'پیام باید حداقل ۱۰ کاراکتر باشد.',
-      message_hint: "درباره پروژت یا ایدت بهم بگو ...",
-      name_hint: "امین زمانی افشار"
+      message_hint: 'درباره پروژت یا ایدت بهم بگو ...',
+      name_hint: 'امین زمانی افشار',
+      email_box: 'ایمیل',
+      location_box: 'موقعیت'
     },
     footer: {
-      rights: '© ۱۴۰۴ تمامی حقوق محفوظ است.',
-      built_with: 'ساخته شده با ☕️ + ❤️'
+      tagline: 'بیایید چیزی بسازیم که واقعاً کار کند.',
+      rights: '© ۱۴۰۴ امین زمانی افشار — تمامی حقوق محفوظ است.',
+      built_with: 'ساخته‌شده با ☕️ و ❤️'
     }
   },
   en: {
     nav: {
       home: 'Home',
       about: 'About',
+      services: 'Services',
       projects: 'Projects',
-      articles: 'Articles',
-      work: 'Work',
+      experience: 'Experience',
+      testimonials: 'Reviews',
       contact: 'Contact'
     },
+    theme: {
+      to_light: 'Light mode',
+      to_dark: 'Dark mode'
+    },
     hero: {
+      available: 'Available for new projects',
       greeting: "Hi, I'm Amin Zamani Afshar",
       role: 'Software Engineer — Websites, Backends & Telegram Bots',
-      description: 'A website that converts. A backend you can trust. A Telegram bot that automates the busywork. I build these for businesses, startups, and solo founders — from idea to finished product, backed by 5+ years of experience.',
+      description:
+        'I turn your idea into a real product that actually works: a website that converts, a backend you can rely on, and a Telegram bot that automates the busywork. For 5+ years I have worked alongside businesses, startups, and solo founders to take ideas from paper to product.',
       cta_projects: 'View Projects',
-      cta_articles: 'Read Articles',
       cta_contact: "Let's start your project",
-      hud_online: 'ONLINE',
-      hud_build: 'v2.0.4',
-      hud_latency: '12ms',
-      signature: 'System initializing...'
+      cta_book: 'Pick a time that works for you 😊',
+      stat_years: 'Years of experience',
+      stat_projects: 'Projects delivered',
+      stat_clients: 'Happy clients'
     },
     about: {
       title: 'About Me',
-      bio: "Ever since I started coding, the thing I've loved most is watching an idea move off the page and into something real that people actually use. That's why, for over 5 years, I've worked alongside businesses, startups, and solo founders to turn what they need into a website, backend, or app that actually works. My core expertise is building powerful websites and backends, and one area I focus on more than most is Telegram bots — because I've seen how much they can simplify a business. Alongside that, I also have hands-on experience building mobile apps.",
+      kicker: 'Get to know me',
+      bio:
+        "Ever since I started coding, the thing I've loved most is watching an idea move off the page and into something real that people actually use. That's why, for over 5 years, I've worked alongside businesses, startups, and solo founders to turn what they need into a website, backend, or app that actually works.",
+      bio2:
+        "My core expertise is building powerful websites and backends, and one area I focus on more than most is Telegram bots — because I've seen how much they can simplify a business. Alongside that, I also have hands-on experience building mobile apps.",
+      what_i_do_title: 'What I do',
       what_i_do: [
-        '✅ Websites & web apps — with React and Next.js',
-        '✅ Secure, scalable backends & APIs — with ASP.NET Core and .NET',
-        '✅ Telegram bots & automation — my specialty',
-        '✅ Mobile apps — with Flutter, for Android and iOS',
+        'Websites & web apps — with React and Next.js',
+        'Secure, scalable backends & APIs — with ASP.NET Core and .NET',
+        'Telegram bots & automation — my specialty',
+        'Mobile apps — with Flutter, for Android and iOS'
       ],
-      chips: ['Developer', 'Gamer', 'Coffee Lover', 'Night Coder'],
-      yearsExp: "Years Exp",
-      projects: "Projects"
+      chips: ['Developer', 'Gamer', 'Coffee Lover', 'Nature']
     },
     services: {
-      title: "What Can I Do For You?",
-      mobile: "Mobile Apps",
-      web: "Websites & Backends",
-      bot: "Telegram Bots",
-      mobile_desc: "Need an app for iPhone or Android that's fast, secure, and just works? I handle it end-to-end, from design to launch.",
-      web_desc: "From a simple website to a complex system with a scalable backend, I design and build whatever your business needs — fast, secure, and ready to grow.",
-      bot_desc: "Want to automate repetitive tasks or talk directly to your customers on Telegram? This is exactly where I specialize — from storefront bots to smart management systems.",
+      kicker: 'What I offer',
+      title: 'What Can I Do For You?',
+      subtitle: 'Whatever your business needs, I build it end-to-end — from idea to launch.',
+      mobile: 'Mobile Apps',
+      web: 'Websites & Backends',
+      bot: 'Telegram Bots',
+      mobile_desc:
+        "Need an app for iPhone or Android that's fast, secure, and just works? I handle it end-to-end, from design to launch.",
+      web_desc:
+        'From a simple website to a complex system with a scalable backend, I design and build whatever your business needs — fast, secure, and ready to grow.',
+      bot_desc:
+        'Want to automate repetitive tasks or talk directly to your customers on Telegram? This is exactly where I specialize — from storefront bots to smart management systems.'
     },
     projects: {
+      kicker: 'Selected work',
       title: 'Featured Projects',
+      subtitle: "A selection of things I've built and shipped with care.",
       filter_all: 'All',
       filter_mobile: 'Mobile',
       filter_web: 'Web',
       filter_backend: 'Backend',
       spotlight: 'Spotlight',
-      view_projects: 'View Projects'
+      view_demo: 'View',
+      view_code: 'Code'
+    },
+    experience: {
+      kicker: 'Career path',
+      title: 'My Experience',
+      subtitle: 'Where I learned, grew, and shipped products.'
+    },
+    testimonials: {
+      kicker: 'Trusted by others',
+      title: 'What People Say About Me',
+      subtitle:
+        "There's nothing more rewarding than hearing from the people I've worked with. 💛"
     },
     articles: {
+      kicker: 'Blog',
       title: 'Latest Articles',
+      subtitle: 'I write about everything I learn.',
       tab_site: 'On this site',
       tab_external: 'Virgool / Medium',
       read_more: 'Read More',
       external_read: 'Read at source'
     },
     work: {
-      title: 'Work With Me',
-      subtitle: 'Have a project in mind? Let\'s start it together.',
+      kicker: "Let's work together",
+      title: 'Ready to start your project?',
+      subtitle: "Have a project in mind? Let's start it together.",
       types: ['Full-time', 'Freelance', 'Consulting'],
-      help_text: 'Whatever it is — a simple website, a complex backend, a Telegram bot, or a mobile app — I\'m here to take it from idea to a real product.',
+      help_text:
+        "Whatever it is — a simple website, a complex backend, a Telegram bot, or a mobile app — I'm here to take it from idea to a real product.",
       cta_email: 'Send Email',
       cta_cv: 'Download CV',
       cta_call: 'Book a Call'
     },
     contact: {
-      title: 'Contact Me',
-      description: "Got a project in mind, or just want to chat? I'd love to hear from you. Let's start a project together 🚀",
+      kicker: 'Contact',
+      title: "I'd love to hear from you",
+      description:
+        "Got a project in mind, or just want to chat? I'd love to hear from you. Let's start a project together 🚀",
       name_label: 'Your Name',
       email_label: 'Email',
       message_label: 'Message',
@@ -202,12 +300,15 @@ export const content = {
       name_error: 'Name must be at least 2 characters.',
       email_error: 'Please enter a valid email address.',
       message_error: 'Message must be at least 10 characters.',
-      message_hint: "Tell me about your project ...",
-      name_hint: "Amin Zamani Afshar"
+      message_hint: 'Tell me about your project ...',
+      name_hint: 'Amin Zamani Afshar',
+      email_box: 'Email',
+      location_box: 'Location'
     },
     footer: {
-      rights: '© 2026 All rights reserved.',
-      built_with: 'Designed in Figma, built with love and code.'
+      tagline: "Let's build something that truly works.",
+      rights: '© 2026 Amin Zamani Afshar — All rights reserved.',
+      built_with: 'Built with ☕️ and ❤️'
     }
   }
 } as const;
@@ -217,8 +318,8 @@ export const projects: Project[] = [
     id: 1,
     title: { en: 'SignalECU', fa: 'SignalECU' },
     desc: {
-      en: 'A secure mobile wallet built with .NET MAUI.',
-      fa: 'اپلیکیشن عیب‌یابی و آموزش ماشین‌آلات سنگین، توسعه داده شده با فلاتر برای اندروید و ای او اس.'
+      en: 'A diagnostics and training app for heavy machinery, built with Flutter for Android and iOS.',
+      fa: 'اپلیکیشن عیب‌یابی و آموزش ماشین‌آلات سنگین، توسعه داده شده با فلاتر برای اندروید و iOS.'
     },
     tags: ['Mobile', 'Flutter', 'Article Rendering'],
     category: 'mobile',
@@ -230,8 +331,8 @@ export const projects: Project[] = [
     id: 2,
     title: { en: 'Explore Hub', fa: 'اکسپلور هاب' },
     desc: {
-      en: 'A digital marketplace e-commerce website developed with Next.js for selling digital products like gaming accounts, Spotify, and AI accounts.',
-      fa: 'وبسایت فروشگاهی توسعه‌یافته با Next.js برای فروش محصولات دیجیتال مانند اکانت‌های گیمینگ، اسپاتیفای، هوش مصنوعی و غیره.'
+      en: 'A digital marketplace built with Next.js for selling digital products like gaming accounts, Spotify, and AI subscriptions.',
+      fa: 'وب‌سایت فروشگاهی توسعه‌یافته با Next.js برای فروش محصولات دیجیتال مانند اکانت‌های گیمینگ، اسپاتیفای، هوش مصنوعی و غیره.'
     },
     tags: ['Web', 'Next.js', 'Tailwind CSS', 'E-commerce'],
     category: 'web',
@@ -254,10 +355,10 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: { en: 'E-commerce Dashboard', fa: 'SPtimer | Smart Pomodoro Timer' },
+    title: { en: 'SPtimer | Smart Pomodoro Timer', fa: 'SPtimer | تایمر پومودورو هوشمند' },
     desc: {
-      en: 'Admin panel for managing products and orders.',
-      fa: 'اپلیکیشن اوپن سورس توسعه‌یافته با فلاتر، با بیش از ۱۰,۰۰۰ نصب در بازار، با استفاده از تکنیک پومودورو به کاربران کمک می‌کند تا تمرکز خود را افزایش داده و خستگی در حین انجام کارهای روزانه را کاهش دهند، تا بتوانند به نتایج بهتری دست یابند.'
+      en: 'An open-source Flutter app with 10,000+ installs that helps users focus using the Pomodoro technique and reduce fatigue during daily tasks.',
+      fa: 'اپلیکیشن اوپن سورس توسعه‌یافته با فلاتر، با بیش از ۱۰,۰۰۰ نصب در بازار، با استفاده از تکنیک پومودورو به کاربران کمک می‌کند تمرکز خود را افزایش داده و خستگی حین انجام کارهای روزانه را کاهش دهند.'
     },
     tags: ['Mobile', 'Flutter', 'Open Source'],
     category: 'mobile',
@@ -267,10 +368,10 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    title: { en: 'Task Manager API', fa: 'Bong Music' },
+    title: { en: 'Bong Music', fa: 'Bong Music' },
     desc: {
-      en: 'High-performance REST API with ASP.NET Core.',
-      fa: 'یک موزیک‌پلیر کراس پلتفرم با قابلیت استعداد‌یابی مشابه اپلیکیشن StarMaker. این برنامه به کاربران امکان می‌دهد تا موزیک گوش کنند، موزیک‌ویدئو بسازند و استعداد خود را به نمایش بگذارند. دارای قابلیت‌هایی مانند ضبط و ادیت صدا، ایجاد پروفایل شخصی و اشتراک‌گذاری محتوا و ... میباشد.'
+      en: 'A cross-platform music player with talent-discovery features inspired by StarMaker — letting users listen, record and edit audio, build music videos, create profiles and share content.',
+      fa: 'یک موزیک‌پلیر کراس پلتفرم با قابلیت استعدادیابی مشابه اپلیکیشن StarMaker. این برنامه به کاربران امکان می‌دهد تا موزیک گوش کنند، موزیک‌ویدئو بسازند و استعداد خود را به نمایش بگذارند. دارای قابلیت‌هایی مانند ضبط و ادیت صدا، ایجاد پروفایل شخصی و اشتراک‌گذاری محتوا و ... می‌باشد.'
     },
     tags: ['Music Player', 'Flutter', 'Talent Finder'],
     category: 'mobile',
@@ -280,9 +381,9 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    title: { en: 'Fitness Tracker', fa: 'Infi Talk' },
+    title: { en: 'Infi Talk', fa: 'Infi Talk' },
     desc: {
-      en: 'Track your workouts and diet progress.',
+      en: 'A cross-platform translator app powered by Azure AI for fast, accurate translation across 100+ languages — with voice translation, speech-to-text and instant translation.',
       fa: 'اپلیکیشن مترجم کراس پلتفرم با بهره‌گیری از هوش مصنوعی Azure برای ترجمه دقیق و سریع. این برنامه با طراحی زیبا و کاربرپسند، امکان ترجمه بیش از ۱۰۰ زبان زنده دنیا را فراهم می‌کند. قابلیت‌های کلیدی شامل ترجمه صوتی، تبدیل ویس به متن، و ترجمه آنی است که تجربه‌ای روان و کاربردی برای کاربران ایجاد می‌کند.'
     },
     tags: ['Mobile', 'Translator', 'Flutter'],
@@ -293,13 +394,113 @@ export const projects: Project[] = [
   },
   {
     id: 7,
-    title: { en: 'Personal Blog', fa: 'وبلاگ شخصی' },
-    desc: { en: 'Minimalist blog built with Next.js.', fa: 'وبلاگ مینیمال ساخته شده با Next.js.' },
+    title: { en: 'Personal Website', fa: 'وب‌سایت شخصی' },
+    desc: {
+      en: 'A bilingual, minimalist personal website built with Next.js and MDX.',
+      fa: 'وب‌سایت شخصی دوزبانه و مینیمال ساخته شده با Next.js و MDX.'
+    },
     tags: ['Web', 'Next.js', 'MDX'],
     category: 'web',
     image: '/projects/personal_website_banner.png',
     demoUrl: '',
     repoUrl: ''
+  }
+];
+
+/**
+ * Work experience timeline.
+ * NOTE: These entries are starter examples — replace the company names,
+ * periods and bullet points with your real history.
+ */
+export const experience: ExperienceItem[] = [
+  {
+    id: 1,
+    role: { en: 'Senior Full-Stack Developer', fa: 'توسعه‌دهنده‌ی ارشد فول‌استک' },
+    company: { en: 'Freelance · Remote', fa: 'فریلنس · دورکاری' },
+    period: { en: '2022 — Present', fa: '۱۴۰۱ — اکنون' },
+    type: { en: 'Freelance', fa: 'پروژه‌ای' },
+    points: [
+      {
+        en: 'Designed and shipped websites, scalable backends and Telegram bots for businesses and startups.',
+        fa: 'طراحی و انتشار وب‌سایت، بک‌اند مقیاس‌پذیر و ربات تلگرام برای کسب‌وکارها و استارتاپ‌ها.'
+      },
+      {
+        en: 'Built end-to-end products from idea to launch with React, Next.js and ASP.NET Core.',
+        fa: 'ساخت محصول از ایده تا انتشار با React، Next.js و ASP.NET Core.'
+      }
+    ]
+  },
+  {
+    id: 2,
+    role: { en: 'Backend Developer (.NET)', fa: 'توسعه‌دهنده‌ی بک‌اند (دات‌نت)' },
+    company: { en: 'Software Company', fa: 'شرکت نرم‌افزاری' },
+    period: { en: '2020 — 2022', fa: '۱۳۹۹ — ۱۴۰۱' },
+    type: { en: 'Full-time', fa: 'تمام‌وقت' },
+    points: [
+      {
+        en: 'Developed secure REST APIs and management systems with ASP.NET Core and SQL Server.',
+        fa: 'توسعه‌ی API امن و سیستم‌های مدیریتی با ASP.NET Core و SQL Server.'
+      },
+      {
+        en: 'Improved performance, data security and code maintainability across services.',
+        fa: 'بهبود کارایی، امنیت داده و نگه‌داری کد در سرویس‌های مختلف.'
+      }
+    ]
+  },
+  {
+    id: 3,
+    role: { en: 'Mobile Developer (Flutter)', fa: 'توسعه‌دهنده‌ی موبایل (فلاتر)' },
+    company: { en: 'Product Team', fa: 'تیم محصول' },
+    period: { en: '2019 — 2020', fa: '۱۳۹۸ — ۱۳۹۹' },
+    type: { en: 'Full-time', fa: 'تمام‌وقت' },
+    points: [
+      {
+        en: 'Built cross-platform mobile apps for Android and iOS, published on app stores.',
+        fa: 'ساخت اپلیکیشن کراس‌پلتفرم برای اندروید و iOS و انتشار در استورها.'
+      },
+      {
+        en: 'Collaborated closely with designers to ship clean, user-friendly experiences.',
+        fa: 'همکاری نزدیک با طراحان برای ارائه‌ی تجربه‌ی کاربری تمیز و کاربرپسند.'
+      }
+    ]
+  }
+];
+
+/**
+ * Testimonials / recommendations.
+ * NOTE: These are placeholder examples. Replace name, role and quote with real
+ * recommendations (e.g. from LinkedIn). Add an avatar image under /public/testimonials/.
+ */
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: { en: 'Team Lead', fa: 'سرپرست تیم' },
+    role: { en: 'CTO · Startup', fa: 'مدیر فنی · استارتاپ' },
+    rating: 5,
+    quote: {
+      en: 'Amin took our project from initial scope all the way to production and owned both the backend and the frontend with equal care. Reliable, communicative and genuinely easy to work with — any team would be lucky to have him.',
+      fa: 'امین پروژه‌ی ما را از ابتدا تا مرحله‌ی نهایی پیش برد و هم بک‌اند و هم فرانت را با دقت کامل به‌عهده گرفت. قابل‌اعتماد، خوش‌برخورد و واقعاً همکاری راحتی با اوست — هر تیمی خوش‌شانس است که او را داشته باشد.'
+    }
+  },
+  {
+    id: 2,
+    name: { en: 'Product Manager', fa: 'مدیر محصول' },
+    role: { en: 'Founder', fa: 'بنیان‌گذار' },
+    rating: 5,
+    quote: {
+      en: 'He single-handedly built our Telegram bot from start to finish — architecture, implementation and ship. Calm under pressure and great to collaborate with.',
+      fa: 'او ربات تلگرام ما را به‌تنهایی از صفر تا انتشار ساخت؛ از معماری تا پیاده‌سازی و تحویل. زیر فشار آرام است و همکاری با او عالیه.'
+    }
+  },
+  {
+    id: 3,
+    name: { en: 'Colleague', fa: 'همکار' },
+    role: { en: 'Senior Developer', fa: 'توسعه‌دهنده‌ی ارشد' },
+    rating: 5,
+    quote: {
+      en: 'Strong technical knowledge, structured and organized, and always follows through with precision. His positive energy brings momentum to every project.',
+      fa: 'دانش فنی قوی، منظم و ساختارمند، و همیشه کارها را با دقت به سرانجام می‌رساند. انرژی مثبتش به هر پروژه‌ای جان می‌دهد.'
+    }
   }
 ];
 

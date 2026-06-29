@@ -1,69 +1,59 @@
 'use client';
 
-import { Calendar, Check, FileText, Link, Mail } from 'lucide-react';
+import { CalendarCheck, Check, FileText, Mail } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 import { content, personalInfo } from '@/data/content';
-import { GlassCard, Section } from '@/components/ui/primitives';
+import { Reveal, Section } from '@/components/ui/primitives';
 
 export function Work() {
   const { language } = useLanguage();
   const t = content[language].work;
 
+  const bookingHref =
+    personalInfo.bookingUrl || `mailto:${personalInfo.email}?subject=${encodeURIComponent('Booking a call')}`;
+  const cvHref = personalInfo.cvUrl || `mailto:${personalInfo.email}?subject=${encodeURIComponent('CV Request')}`;
 
   return (
-    <Section id="work" className="relative overflow-hidden py-24">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-500/10 blur-[120px]" />
+    <Section id="work">
+      <Reveal>
+        <div className="relative overflow-hidden rounded-4xl border border-line bg-card p-8 shadow-card sm:p-12">
+          <div className="pointer-events-none absolute -right-10 -top-16 h-64 w-64 glow-blob" />
+          <div className="relative grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
+            <div>
+              <span className="section-kicker">{t.kicker}</span>
+              <h2 className="heading text-3xl sm:text-4xl">{t.title}</h2>
+              <p className="mt-4 text-base text-muted">{t.subtitle}</p>
 
-      <GlassCard className="relative mx-auto max-w-4xl border-emerald-500/30 p-12 shadow-[0_0_50px_rgba(16,185,129,0.1)] md:p-16">
-        <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-50" />
+              <div className="mt-6 flex flex-wrap gap-2.5">
+                {t.types.map((type) => (
+                  <span
+                    key={type}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-accent/12 px-3.5 py-1.5 text-sm font-medium text-accent ring-1 ring-inset ring-accent/20"
+                  >
+                    <Check size={14} strokeWidth={3} /> {type}
+                  </span>
+                ))}
+              </div>
 
-        <div className="flex flex-col items-center justify-between gap-12 text-center md:flex-row md:text-start">
-          <div className="flex-1 space-y-6">
-            <h2 className="mb-4 text-4xl font-bold text-white">{t.title}</h2>
-            <p className="text-lg text-slate-300">{t.subtitle}</p>
-
-            <div className="mb-6 flex flex-wrap justify-center gap-3 md:justify-start">
-              {t.types.map((type) => (
-                <div
-                  key={type}
-                  className="flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 font-medium text-emerald-400"
-                >
-                  <Check size={16} />
-                  <span>{type}</span>
-                </div>
-              ))}
+              <p className="mt-6 max-w-lg border-s-2 border-accent/50 ps-4 text-sm italic leading-relaxed text-muted">
+                {t.help_text}
+              </p>
             </div>
 
-            <p className="text-sm italic text-slate-400">&quot;{t.help_text}&quot;</p>
-          </div>
-
-          <div className="flex min-w-[240px] flex-col gap-4">
-            <a
-              href={"mailto:" + personalInfo.email}
-              className="flex w-full items-center justify-center gap-3 rounded-xl bg-emerald-500 px-6 py-4 font-bold text-slate-950 shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all hover:bg-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]"
-            >
-              <Mail size={20} />
-              {t.cta_email}
-            </a>
-
-            <a
-              href={"mailto:" + personalInfo.email + "?subject=CV%20Request"}
-              className="flex w-full items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/5 px-6 py-4 font-medium text-white transition-all hover:bg-white/10"
-            >
-              <FileText size={20} />
-              {t.cta_cv}
-            </a>
-
-            <a
-              href="#contact"
-              className="flex w-full items-center justify-center gap-3 rounded-xl border border-slate-700 bg-slate-900 px-6 py-4 font-medium text-slate-300 transition-all hover:border-emerald-500/50 hover:text-emerald-400"
-            >
-              <Calendar size={20} />
-              {t.cta_call}
-            </a>
+            <div className="flex flex-col gap-3">
+              <a href={bookingHref} className="btn-accent w-full">
+                <CalendarCheck size={18} /> {t.cta_call}
+              </a>
+              <a href={`mailto:${personalInfo.email}`} className="btn-ghost w-full">
+                <Mail size={18} /> {t.cta_email}
+              </a>
+              <a href={cvHref} className="btn-ghost w-full">
+                <FileText size={18} /> {t.cta_cv}
+              </a>
+            </div>
           </div>
         </div>
-      </GlassCard>
+      </Reveal>
     </Section>
   );
 }

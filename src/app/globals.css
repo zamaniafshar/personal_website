@@ -2,8 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------------------------------------------------------------ */
+/*  Design tokens — warm, premium palette (dark default + light)      */
+/* ------------------------------------------------------------------ */
 :root {
-  color-scheme: dark;
+  /* Dark theme (default) */
+  --c-paper: 15 14 13;
+  --c-panel: 25 23 20;
+  --c-card: 31 29 25;
+  --c-line: 56 51 44;
+  --c-ink: 245 241 234;
+  --c-muted: 173 165 152;
+  --c-accent: 226 163 78;
+  --c-accent-contrast: 26 18 8;
+
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+}
+
+.light {
+  --c-paper: 250 247 241;
+  --c-panel: 244 239 230;
+  --c-card: 255 255 255;
+  --c-line: 228 220 207;
+  --c-ink: 38 34 29;
+  --c-muted: 105 97 86;
+  --c-accent: 176 112 36;
+  --c-accent-contrast: 255 252 247;
 }
 
 html {
@@ -12,51 +37,57 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-sans);
+  background-color: rgb(var(--c-paper));
+  color: rgb(var(--c-ink));
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body[data-lang='fa'] {
-  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  --font-sans: 'Vazirmatn', 'Tahoma', sans-serif;
+  --font-display: 'Vazirmatn', 'Tahoma', sans-serif;
 }
 
 body[data-lang='en'] {
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
 }
 
 @layer base {
   * {
-    @apply border-slate-800;
+    @apply border-line;
+  }
+  ::selection {
+    background-color: rgb(var(--c-accent) / 0.25);
+    color: rgb(var(--c-ink));
   }
 }
 
-@keyframes blink {
-  0%,
-  49% {
-    opacity: 1;
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8;
   }
-
-  50%,
-  100% {
-    opacity: 0;
+  .section-kicker {
+    @apply mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent;
+  }
+  .heading {
+    @apply font-display font-bold tracking-tight text-ink;
+  }
+  .surface {
+    @apply rounded-3xl border border-line bg-card shadow-soft;
+  }
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-accent-contrast transition-all duration-300 hover:shadow-glow hover:brightness-105 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line bg-card px-6 py-3 font-semibold text-ink transition-all duration-300 hover:border-accent/50 hover:text-accent;
   }
 }
 
-@keyframes scan {
-  0% {
-    transform: translateY(-100%);
-  }
-
-  100% {
-    transform: translateY(1000%);
-  }
-}
-
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
-
-.animate-scan {
-  animation: scan 3s linear infinite;
+/* Decorative warm gradient blob used behind hero / sections */
+.glow-blob {
+  background: radial-gradient(circle at center, rgb(var(--c-accent) / 0.18), transparent 70%);
 }
 
 @media (prefers-reduced-motion: reduce) {

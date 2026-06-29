@@ -1,59 +1,48 @@
 'use client';
 
-import { CheckCircle, Clock, Terminal } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { useLanguage } from '@/context/language-context';
 import { content } from '@/data/content';
-import { Badge, GlassCard, Section } from '@/components/ui/primitives';
+import { Badge, Card, Reveal, Section } from '@/components/ui/primitives';
 
 export function About() {
   const { language } = useLanguage();
   const t = content[language].about;
 
   return (
-    <Section id="about" className="relative">
-      <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2">
-        <div>
-          <h2 className="mb-6 flex items-center gap-3 text-3xl font-bold text-emerald-400">
-            <span className="h-1 w-8 rounded-full bg-emerald-500" />
-            {t.title}
-          </h2>
+    <Section id="about">
+      <div className="grid items-start gap-10 lg:grid-cols-2">
+        <Reveal>
+          <span className="section-kicker">{t.kicker}</span>
+          <h2 className="heading text-3xl sm:text-4xl">{t.title}</h2>
+          <span className="mt-5 block h-1 w-16 rounded-full bg-accent/80" />
+          <p className="mt-6 text-base leading-relaxed text-muted">{t.bio}</p>
+          <p className="mt-4 text-base leading-relaxed text-muted">{t.bio2}</p>
 
-          <p className="mb-8 text-lg leading-relaxed text-slate-300">{t.bio}</p>
-
-          <div className="flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {t.chips.map((chip) => (
-              <Badge
-                key={chip}
-                variant="outline"
-                className="cursor-default transition-colors hover:border-emerald-500/50 hover:text-emerald-400"
-              >
+              <Badge key={chip} variant="soft">
                 {chip}
               </Badge>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className="space-y-6">
-          <div className="mb-8 space-y-4">
-            {t.what_i_do.map((item) => (
-              <div key={item} className="group flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-emerald-500 transition-transform group-hover:scale-110" />
-                <span className="text-slate-400 transition-colors group-hover:text-emerald-300">{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            <GlassCard className="flex flex-col items-center justify-center p-4 text-center">
-              <span className="mb-1 text-4xl font-bold text-emerald-400">5+</span>
-              <span className="text-xs uppercase tracking-widest text-slate-400">{t.yearsExp}</span>
-            </GlassCard>
-            <GlassCard className="flex flex-col items-center justify-center p-4 text-center">
-              <span className="mb-1 text-4xl font-bold text-teal-400">20+</span>
-              <span className="text-xs uppercase tracking-widest text-slate-400">{t.projects}</span>
-            </GlassCard>
-          </div>
-        </div>
+        <Reveal delay={0.1}>
+          <Card hover={false} className="p-7 sm:p-8">
+            <h3 className="font-display text-lg font-bold text-ink">{t.what_i_do_title}</h3>
+            <ul className="mt-5 space-y-4">
+              {t.what_i_do.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <Check size={14} strokeWidth={3} />
+                  </span>
+                  <span className="text-sm leading-relaxed text-muted">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </Reveal>
       </div>
     </Section>
   );

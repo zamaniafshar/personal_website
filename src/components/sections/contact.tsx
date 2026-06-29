@@ -1,13 +1,13 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Copy, Github, Instagram, Linkedin, Mail, MapPin, Send, Twitter } from 'lucide-react';
+import { Check, Copy, Github, Instagram, Linkedin, Mail, MapPin, Send } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useLanguage } from '@/context/language-context';
 import { content, personalInfo } from '@/data/content';
-import { GlassCard, Section } from '@/components/ui/primitives';
+import { Card, Reveal, Section } from '@/components/ui/primitives';
 
 const contactSchema = z.object({
   name: z.string().min(2),
@@ -16,7 +16,6 @@ const contactSchema = z.object({
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
-
 
 export function Contact() {
   const { language } = useLanguage();
@@ -33,27 +32,17 @@ export function Contact() {
     formState: { errors }
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: ''
-    }
+    defaultValues: { name: '', email: '', message: '' }
   });
 
-  useEffect(() => {
-    return () => {
-      if (copyResetTimer.current) {
-        clearTimeout(copyResetTimer.current);
-      }
-    };
+  useEffect(() => () => {
+    if (copyResetTimer.current) clearTimeout(copyResetTimer.current);
   }, []);
 
   const onSubmit = async () => {
     setIsSending(true);
     setSuccessMessage(null);
-
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsSending(false);
     setSuccessMessage(t.toast_success);
     reset();
@@ -62,160 +51,124 @@ export function Contact() {
   const copyEmail = async () => {
     await navigator.clipboard.writeText(personalInfo.email);
     setIsCopied(true);
-
-    if (copyResetTimer.current) {
-      clearTimeout(copyResetTimer.current);
-    }
-
-    copyResetTimer.current = setTimeout(() => {
-      setIsCopied(false);
-    }, 1800);
+    if (copyResetTimer.current) clearTimeout(copyResetTimer.current);
+    copyResetTimer.current = setTimeout(() => setIsCopied(false), 1800);
   };
 
+  const socials = [
+    { label: 'GitHub', href: personalInfo.github, icon: Github },
+    { label: 'LinkedIn', href: personalInfo.linkedin, icon: Linkedin },
+    { label: 'Instagram', href: personalInfo.instagram, icon: Instagram }
+  ].filter((s) => s.href);
+
+  const inputClass =
+    'w-full rounded-xl border border-line bg-paper px-4 py-3 text-ink placeholder-muted/60 transition-all focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20';
+
   return (
-    <Section id="contact" className="relative py-24">
-      <div className="pointer-events-none absolute inset-0 bg-slate-950" />
+    <Section id="contact" className="bg-panel/40">
+      <div className="grid items-start gap-10 lg:grid-cols-2">
+        <Reveal>
+          <span className="section-kicker">{t.kicker}</span>
+          <h2 className="heading text-3xl sm:text-4xl">{t.title}</h2>
+          <p className="mt-4 max-w-md text-base leading-relaxed text-muted">{t.description}</p>
 
-      <div className="relative z-10 grid grid-cols-1 gap-12 md:grid-cols-2">
-        <div>
-          <h2 className="mb-6 flex items-center gap-3 text-4xl font-bold text-white">
-            <span className="h-1 w-12 rounded-full bg-emerald-500" />
-            {t.title}
-          </h2>
-
-          <p className="mb-8 text-lg leading-relaxed text-slate-400">{t.description}</p>
-
-          <div className="mb-12 space-y-6">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-emerald-400">
-                <Mail size={20} />
+          <div className="mt-8 space-y-4">
+            <div className="flex items-center gap-4 rounded-2xl border border-line bg-card p-4">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                <Mail size={18} />
+              </span>
+              <div className="min-w-0 flex-1">
+                <span className="block text-xs uppercase tracking-wide text-muted">{t.email_box}</span>
+                <span className="truncate text-sm font-medium text-ink">{personalInfo.email}</span>
               </div>
-
-              <div>
-                <span className="block text-sm font-medium uppercase tracking-wide text-slate-500">Email</span>
-                <button
-                  type="button"
-                  onClick={copyEmail}
-                  className="font-mono text-lg text-white transition-colors hover:text-emerald-400"
-                >
-                  {personalInfo.email}
-                </button>
-              </div>
-
               <button
                 type="button"
                 onClick={copyEmail}
-                className="ms-auto rounded-lg p-2 text-slate-500 transition-colors hover:bg-white/5 hover:text-white"
+                className="rounded-lg p-2 text-muted transition-colors hover:bg-panel hover:text-accent"
                 title={t.copy_email}
+                aria-label={t.copy_email}
               >
-                <Copy size={16} />
+                {isCopied ? <Check size={16} className="text-accent" /> : <Copy size={16} />}
               </button>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-emerald-400">
-                <MapPin size={20} />
-              </div>
+            <div className="flex items-center gap-4 rounded-2xl border border-line bg-card p-4">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/15 text-accent">
+                <MapPin size={18} />
+              </span>
               <div>
-                <span className="block text-sm font-medium uppercase tracking-wide text-slate-500">Location</span>
-                <span className="text-lg text-white">{personalInfo.location}</span>
+                <span className="block text-xs uppercase tracking-wide text-muted">{t.location_box}</span>
+                <span className="text-sm font-medium text-ink">{personalInfo.location[language]}</span>
               </div>
             </div>
           </div>
 
-          {isCopied && <p className="mb-4 text-sm text-emerald-400">{t.copied_email}</p>}
+          {isCopied && <p className="mt-3 text-sm text-accent">{t.copied_email}</p>}
 
-          <div className="flex gap-4">
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noreferrer"
-              className="group cursor-pointer rounded-xl border border-white/10 p-3 transition-all hover:border-emerald-500/30 hover:bg-emerald-500/10"
-              aria-label="GitHub"
-            >
-              <Github size={24} className="text-slate-400 transition-colors group-hover:text-emerald-400" />
-            </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="group cursor-pointer rounded-xl border border-white/10 p-3 transition-all hover:border-blue-500/30 hover:bg-blue-500/10"
-              aria-label="Linkedin"
-            >
-              <Linkedin size={24} className="text-slate-400 transition-colors group-hover:text-blue-400" />
-            </a>
-            <a
-              href={personalInfo.instagram}
-              target="_blank"
-              rel="noreferrer"
-              className="group cursor-pointer rounded-xl border border-white/10 p-3 transition-all hover:border-blue-700/30 hover:bg-blue-700/10"
-              aria-label="Instagram"
-            >
-              <Instagram size={24} className="text-slate-400 transition-colors group-hover:text-blue-600" />
-            </a>
-          </div>
-        </div>
-
-        <GlassCard className="border-emerald-500/10 bg-slate-900/40 p-8 md:p-10" hoverEffect={false}>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
-            <div>
-              <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-400">
-                {t.name_label}
-              </label>
-              <input
-                id="name"
-                type="text"
-                {...register('name')}
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-600 transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:outline-none"
-                placeholder={t.name_hint}
-              />
-              {errors.name && <p className="mt-2 text-xs text-red-400">{t.name_error}</p>}
+          {socials.length > 0 && (
+            <div className="mt-6 flex gap-3">
+              {socials.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-card text-muted transition-all hover:border-accent/40 hover:text-accent"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
             </div>
+          )}
+        </Reveal>
 
-            <div>
-              <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-400">
-                {t.email_label}
-              </label>
-              <input
-                id="email"
-                type="email"
-                {...register('email')}
-                className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-600 transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:outline-none"
-                placeholder="amin@gmail.com"
-              />
-              {errors.email && <p className="mt-2 text-xs text-red-400">{t.email_error}</p>}
-            </div>
+        <Reveal delay={0.1}>
+          <Card hover={false} className="p-7 sm:p-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+              <div>
+                <label htmlFor="name" className="mb-2 block text-sm font-medium text-muted">
+                  {t.name_label}
+                </label>
+                <input id="name" type="text" {...register('name')} className={inputClass} placeholder={t.name_hint} />
+                {errors.name && <p className="mt-2 text-xs text-red-500">{t.name_error}</p>}
+              </div>
 
-            <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-400">
-                {t.message_label}
-              </label>
-              <textarea
-                id="message"
-                {...register('message')}
-                className="min-h-[120px] w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-600 transition-all focus:border-emerald-500/50 focus:bg-white/10 focus:outline-none"
-                placeholder={t.message_hint}
-              />
-              {errors.message && <p className="mt-2 text-xs text-red-400">{t.message_error}</p>}
-            </div>
+              <div>
+                <label htmlFor="email" className="mb-2 block text-sm font-medium text-muted">
+                  {t.email_label}
+                </label>
+                <input id="email" type="email" {...register('email')} className={inputClass} placeholder="you@email.com" />
+                {errors.email && <p className="mt-2 text-xs text-red-500">{t.email_error}</p>}
+              </div>
 
-            <button
-              type="submit"
-              disabled={isSending}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 py-4 font-bold text-slate-900 shadow-[0_0_20px_rgba(16,185,129,0.3)] transition-all hover:bg-emerald-400 hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {isSending ? (
-                <span className="h-5 w-5 animate-spin rounded-full border-2 border-slate-900 border-t-transparent" />
-              ) : (
-                <>
-                  {t.send_btn} <Send size={18} />
-                </>
-              )}
-            </button>
+              <div>
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-muted">
+                  {t.message_label}
+                </label>
+                <textarea
+                  id="message"
+                  {...register('message')}
+                  className={`min-h-[120px] ${inputClass}`}
+                  placeholder={t.message_hint}
+                />
+                {errors.message && <p className="mt-2 text-xs text-red-500">{t.message_error}</p>}
+              </div>
 
-            {successMessage && <p className="text-sm text-emerald-400">{successMessage}</p>}
-          </form>
-        </GlassCard>
+              <button type="submit" disabled={isSending} className="btn-accent w-full disabled:opacity-70">
+                {isSending ? (
+                  <span className="h-5 w-5 animate-spin rounded-full border-2 border-accent-contrast border-t-transparent" />
+                ) : (
+                  <>
+                    {t.send_btn} <Send size={17} className="rtl:-scale-x-100" />
+                  </>
+                )}
+              </button>
+
+              {successMessage && <p className="text-sm font-medium text-accent">{successMessage}</p>}
+            </form>
+          </Card>
+        </Reveal>
       </div>
     </Section>
   );
