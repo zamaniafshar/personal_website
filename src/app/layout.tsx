@@ -10,7 +10,15 @@ export const metadata: Metadata = {
     title: 'Amin Zamani Afshar | Software Engineer',
     description:
       'Websites that convert, backends you can trust, and Telegram bots that automate the busywork.',
-    type: 'website'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',      // Next.js resolves this against metadataBase
+        width: 1200,
+        height: 630,
+        alt: 'Amin Zamani Afshar – Full-Stack Developer',
+      },
+    ],
   }
 };
 
