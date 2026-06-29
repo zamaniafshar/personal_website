@@ -17,10 +17,6 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-paper py-12">
       <div className="container-px flex flex-col items-center text-center">
-        <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent font-display text-sm font-extrabold text-accent-contrast shadow-glow">
-          AZ
-        </span>
-        <p className="mt-5 max-w-sm font-display text-lg font-semibold text-ink">{t.tagline}</p>
 
         {socials.length > 0 && (
           <div className="mt-6 flex gap-3">

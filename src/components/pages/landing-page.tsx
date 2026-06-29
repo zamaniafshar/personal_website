@@ -21,7 +21,7 @@ export function LandingPage() {
         <About />
         <Services />
         <Projects />
-        <Experience />
+        {/* <Experience /> */}
         <Testimonials />
         <Articles />
         <Work />

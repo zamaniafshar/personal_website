@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/context/language-context';
 import { content, personalInfo } from '@/data/content';
+import { TypeAnimation } from 'react-type-animation';
 
 export function Hero() {
   const { language } = useLanguage();
@@ -14,7 +15,7 @@ export function Hero() {
     personalInfo.bookingUrl || `mailto:${personalInfo.email}?subject=${encodeURIComponent('Booking a call')}`;
 
   const stats = [
-    { value: '5+', label: t.stat_years },
+    { value: '6+', label: t.stat_years },
     { value: '20+', label: t.stat_projects },
     { value: '100%', label: t.stat_clients }
   ];
@@ -31,17 +32,23 @@ export function Hero() {
           transition={{ duration: 0.7 }}
           className="text-center lg:text-start"
         >
-          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-line bg-card px-4 py-1.5 text-xs font-medium text-muted lg:mx-0">
+          <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-line bg-card px-4 py-1.5 text-xl font-medium text-muted lg:mx-0">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-accent" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            {t.available}
+            {t.welcome}
           </span>
-
           <h1 className="heading mt-6 text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">{t.greeting}</h1>
-          <p className="mt-4 text-lg font-medium text-accent sm:text-xl">{t.role}</p>
-          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted lg:mx-0">{t.description}</p>
+          <TypeAnimation
+            sequence={t.typing_texts.flatMap((text) => [text, 2000])}
+            wrapper="p"
+            speed={50}
+            deletionSpeed={70}
+            repeat={Infinity}
+            className="mt-4 text-lg font-medium text-accent sm:text-xl"
+          />
+          {/* <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-muted lg:mx-0">{t.description}</p> */}
 
           <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row lg:justify-start">
             <a href={bookingHref} className="btn-accent">
@@ -84,15 +91,7 @@ export function Hero() {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
           </div>
 
-          <div className="absolute bottom-4 start-4 flex items-center gap-3 rounded-2xl border border-line bg-paper/90 px-4 py-3 shadow-soft backdrop-blur-md">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15 text-accent">
-              <CalendarCheck size={20} />
-            </span>
-            <div className="text-start">
-              <p className="text-sm font-semibold text-ink">{personalInfo.name[language]}</p>
-              <p className="text-xs text-muted">{t.available}</p>
-            </div>
-          </div>
+
         </motion.div>
       </div>
     </section>

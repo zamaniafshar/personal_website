@@ -49,11 +49,11 @@ export const personalInfo = {
   phone: '',
   location: { en: 'Kerman, Iran · Remote', fa: 'کرمان، ایران · دورکاری' } as LocalizedText,
   github: 'https://github.com/zamaniafshar',
-  linkedin: '',
-  instagram: '',
-  telegram: '',
+  linkedin: 'https://www.linkedin.com/in/zamani-afshar/',
+  instagram: 'https://www.instagram.com/amin.devlog/',
+  telegram: 'https://t.me/amin_zamani_afshar',
   // Leave empty to fall back to an email link. Drop in a Calendly / Cal.com URL to enable booking.
-  bookingUrl: '',
+  bookingUrl: 'https://calendar.app.google/syZuknLSjKC9eTM6A',
   // Optional: link to a hosted PDF résumé. Falls back to an email request when empty.
   cvUrl: ''
 };
@@ -74,31 +74,33 @@ export const content = {
       to_dark: 'حالت تیره'
     },
     hero: {
-      available: 'آماده‌ی پروژه‌های جدید',
-      greeting: 'سلام، من امین زمانی افشار هستم',
-      role: 'مهندس نرم‌افزار — وب‌سایت، بک‌اند و ربات تلگرام',
-      description:
-        'ایده‌ات را به محصولی واقعی تبدیل می‌کنم که واقعاً کار می‌کند؛ وب‌سایتی که نتیجه می‌دهد، بک‌اندی که می‌توانی به آن تکیه کنی و رباتی که کارهای تکراری را خودکار می‌کند. بیش از ۵ سال است که کنار کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل ایستاده‌ام تا ایده‌ها را از کاغذ به محصول برسانم.',
+      welcome: "سلام خوش اومدی!",
+      greeting: 'امین زمانی افشار',
+      role: 'فول استک دولوپر',
+      typing_texts: [
+        'فول استک دولوپر',
+        'خالق محصولات موثر',
+        'عاشق حل چالش ها',
+        'کسب و کارت انلاین کن!',
+      ],
       cta_projects: 'دیدن پروژه‌ها',
       cta_contact: 'بیا پروژه‌ات را شروع کنیم',
-      cta_book: 'یک زمان مناسب انتخاب کن 😊',
+      cta_book: 'یک زمان ملاقات انتخاب کن 😎',
       stat_years: 'سال تجربه',
       stat_projects: 'پروژه‌ی انجام‌شده',
-      stat_clients: 'مشتری راضی'
+      stat_clients: 'رضایت مشتری'
     },
     about: {
       title: 'درباره من',
       kicker: 'بیایید آشنا شویم',
-      bio:
-        'از وقتی برنامه‌نویسی را شروع کردم، چیزی که همیشه برایم لذت‌بخش بوده دیدن یک ایده‌ست که از روی کاغذ می‌آید بیرون و تبدیل به یک محصول واقعی می‌شود که آدم‌ها ازش استفاده می‌کنند. برای همین بیش از ۵ سال است که کنار کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل می‌ایستم تا نیازشان را به وب‌سایت، بک‌اند یا اپلیکیشنی تبدیل کنم که واقعاً کار می‌کند.',
-      bio2:
-        'تخصص اصلی من ساخت وب‌سایت‌ها و بک‌اندهای قدرتمند است و یکی از حوزه‌هایی که بیش از همه رویش تمرکز دارم ساخت ربات‌های تلگرام است؛ چون می‌دانم چقدر می‌تواند فرایندهای یک کسب‌وکار را ساده‌تر کند. در کنار این‌ها، تجربه‌ی عملی در ساخت اپلیکیشن موبایل هم دارم.',
+      bio: 'علاقه‌ی من به برنامه‌نویسی از جایی شروع شد که فهمیدم با چند خط کد توی یک صحفه سیاه و سفید، میشه کلی چیزای جذاب و باحال ساخت و کلی از مشکلات حل کرد. از سال ۱۳۹۹ به‌صورت حرفه‌ای در دنیای توسعه نرم‌افزار فعالیت می‌کنم. همیشه تلاش کرده‌ام راه‌حل‌هایی بسازم که هم از نظر فنی دقیق باشند و هم برای آدم‌ها واقعاً کاربردی باشند.',
+      bio2: ' بر اساس نیاز هر پروژه، می‌توانم در طراحی وب‌سایت، ساخت اپلیکیشن‌های موبایل، توسعه‌ی بک‌اندهای مقیاس‌پذیر، طراحی ربات‌های تلگرام و پیاده‌سازی راه‌حل‌های نرم‌افزاری اختصاصی همراه شما باشم. از اولین خط کد تا آخرین لحظه‌ی انتشار، قدم‌به‌قدم کنار شما هستم تا ایده‌تان با دقت، شفافیت و کیفیت به یک محصول واقعی تبدیل شود.',
       what_i_do_title: 'چه کارهایی انجام می‌دهم',
       what_i_do: [
-        'وب‌سایت و وب‌اپلیکیشن — با React و Next.js',
-        'بک‌اند و API امن و مقیاس‌پذیر — با ASP.NET Core و دات‌نت',
-        'ربات تلگرام و اتوماسیون — تخصص اصلی من',
-        'اپلیکیشن موبایل — با فلاتر، برای اندروید و iOS'
+        'توسعه اپلیکیشن‌های  کراس پلتفرم با استفاده از فلاتر',
+        'توسعه اپلیکیشن های نیتیو برای پلتفرم های Android & IOS',
+        'طراحی و توسعه بک‌اند‌های پیچیده و مقیاس‌پذیر با ASP.NET Core ',
+        'توسعه وب سایت های مدرن و کارآمد با React و Next.js',
       ],
       chips: ['کدنویسی 👨🏻‍💻', 'گیم 🎮', 'عاشق قهوه ☕️', 'طبیعت 🌳']
     },
@@ -180,7 +182,6 @@ export const content = {
       location_box: 'موقعیت'
     },
     footer: {
-      tagline: 'بیایید چیزی بسازیم که واقعاً کار کند.',
       rights: '© ۱۴۰۴ امین زمانی افشار — تمامی حقوق محفوظ است.',
       built_with: 'ساخته‌شده با ☕️ و ❤️'
     }
@@ -200,11 +201,15 @@ export const content = {
       to_dark: 'Dark mode'
     },
     hero: {
-      available: 'Available for new projects',
-      greeting: "Hi, I'm Amin Zamani Afshar",
-      role: 'Software Engineer — Websites, Backends & Telegram Bots',
-      description:
-        'I turn your idea into a real product that actually works: a website that converts, a backend you can rely on, and a Telegram bot that automates the busywork. For 5+ years I have worked alongside businesses, startups, and solo founders to take ideas from paper to product.',
+      welcome: "Hi, Welcome to my website!",
+      greeting: "I'm Amin Zamani Afshar",
+      role: 'Full-Stack Developer',
+      typing_texts: [
+        'Full Stack Developer',
+        'Creator of Effective Products',
+        'Love Solving Challenges',
+        'Take Your Business Online!',
+      ],
       cta_projects: 'View Projects',
       cta_contact: "Let's start your project",
       cta_book: 'Pick a time that works for you 😊',
@@ -306,7 +311,6 @@ export const content = {
       location_box: 'Location'
     },
     footer: {
-      tagline: "Let's build something that truly works.",
       rights: '© 2026 Amin Zamani Afshar — All rights reserved.',
       built_with: 'Built with ☕️ and ❤️'
     }
@@ -403,7 +407,7 @@ export const projects: Project[] = [
     category: 'web',
     image: '/projects/personal_website_banner.png',
     demoUrl: '',
-    repoUrl: ''
+    repoUrl: 'https://github.com/zamaniafshar/personal_website'
   }
 ];
 
@@ -479,7 +483,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     quote: {
       en: 'Amin took our project from initial scope all the way to production and owned both the backend and the frontend with equal care. Reliable, communicative and genuinely easy to work with — any team would be lucky to have him.',
-      fa: 'امین پروژه‌ی ما را از ابتدا تا مرحله‌ی نهایی پیش برد و هم بک‌اند و هم فرانت را با دقت کامل به‌عهده گرفت. قابل‌اعتماد، خوش‌برخورد و واقعاً همکاری راحتی با اوست — هر تیمی خوش‌شانس است که او را داشته باشد.'
+      fa: 'لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. این متن به عنوان یک عنصر ساختگی و بدون معنی به کار می‌رود تا طراحان بتوانند بر روی عناصر بصری مانند فونت، رنگ، اندازه و چیدمان تمرکز کنند.'
     }
   },
   {
@@ -489,7 +493,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     quote: {
       en: 'He single-handedly built our Telegram bot from start to finish — architecture, implementation and ship. Calm under pressure and great to collaborate with.',
-      fa: 'او ربات تلگرام ما را به‌تنهایی از صفر تا انتشار ساخت؛ از معماری تا پیاده‌سازی و تحویل. زیر فشار آرام است و همکاری با او عالیه.'
+      fa: 'لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. این متن به عنوان یک عنصر ساختگی و بدون معنی به کار می‌رود تا طراحان بتوانند بر روی عناصر بصری مانند فونت، رنگ، اندازه و چیدمان تمرکز کنند.'
     }
   },
   {
@@ -499,7 +503,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     quote: {
       en: 'Strong technical knowledge, structured and organized, and always follows through with precision. His positive energy brings momentum to every project.',
-      fa: 'دانش فنی قوی، منظم و ساختارمند، و همیشه کارها را با دقت به سرانجام می‌رساند. انرژی مثبتش به هر پروژه‌ای جان می‌دهد.'
+      fa: 'لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک گفته می‌شود. این متن به عنوان یک عنصر ساختگی و بدون معنی به کار می‌رود تا طراحان بتوانند بر روی عناصر بصری مانند فونت، رنگ، اندازه و چیدمان تمرکز کنند.'
     }
   }
 ];
