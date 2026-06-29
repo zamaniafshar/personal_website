@@ -11,20 +11,23 @@ export function Skills() {
 
   const itemGroups = [
     {
+      id: 'mobile',
       title: t.mobile,
       desc: t.mobile_desc,
       icon: <Smartphone size={24} />,
       color: 'from-blue-500 to-indigo-600'
     },
     {
+      id: 'web',
       title: t.web,
       desc: t.web_desc,
       icon: <Server size={24} />,
       color: 'from-emerald-500 to-teal-600'
     },
     {
-      title: t.desktop,
-      desc: t.desktop_desc,
+      id: 'bot',
+      title: t.bot,
+      desc: t.bot_desc,
       icon: <Brain size={24} />,
       color: 'from-fuchsia-500 to-pink-600'
     }
@@ -44,7 +47,7 @@ export function Skills() {
       <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-3">
         {itemGroups.map((group) => (
           <GlassCard
-            key={group.title}
+            key={group.id}
             className="group relative overflow-hidden border-slate-800 transition-all duration-500 hover:-translate-y-2"
             whileHover={{ scale: 1.02 }}
           >

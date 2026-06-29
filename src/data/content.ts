@@ -43,37 +43,37 @@ export const content = {
       contact: 'تماس'
     },
     hero: {
-      greeting: 'سلام، من امین زمانی افشار هستم',
-      role: 'یک برنامه نویس',
-      description: 'با بیش از ۵ سال تجربه در ساخت اپلیکیشن های مدرن و کارآمد',
+      greeting: 'امین زمانی افشار',
+      role: 'توسعه‌دهنده فول‌استک',
+      description: 'وب‌سایتی که نتیجه بده، بک‌اندی قابل‌اعتماد، یا رباتی که کارهای تکراری رو خودکار کنه؟ من اینها رو برای کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل می‌سازم؛ از ایده تا محصول نهایی، با بیش از ۵ سال تجربه.',
       cta_projects: 'مشاهده پروژه‌ها',
       cta_articles: 'خواندن مقالات',
       hud_online: 'آنلاین',
-      hud_build: 'نسخه ۲.۰.۴',
+      hud_build: 'نسخه ۲.۱.۴',
       hud_latency: '۱۲ میلی‌ثانیه',
       signature: 'در حال اجرای سیستم...'
     },
     about: {
       title: 'درباره من',
-      bio: 'من یک توسعه‌دهنده نرم‌افزار با اشتیاق به ساخت رابط‌های کاربری زیبا و کاربردی هستم. تمرکز اصلی من بر روی ساخت اپلیکیشن های موبایل بوده است، اما اکنون با هیجان به دنیای بک اند و فرانت اند وارد شده‌ام.',
+      bio: 'از وقتی برنامه‌نویسی رو شروع کردم، چیزی که همیشه برام لذت‌بخش بوده، دیدن یه ایده‌ست که از روی کاغذ میاد بیرون و تبدیل به یه محصول واقعی می‌شه که آدم‌ها ازش استفاده می‌کنن. برای همین بیش از ۵ ساله که کنار کسب‌وکارها، استارتاپ‌ها و کارآفرینان مستقل می‌ایستم تا نیازشون رو به وب‌سایت، بک‌اند یا اپلیکیشنی تبدیل کنم که واقعاً کار می‌کنه. تخصص اصلی من ساخت وب‌سایت و بک‌اندهای قدرتمنده، و یکی از حوزه‌هایی که بیشتر از همه روش تمرکز دارم ساخت ربات‌های تلگرامه؛ چون می‌دونم چقدر می‌تونه فرایندهای یه کسب‌وکار رو ساده‌تر کنه. در کنار این‌ها، تجربه عملی در ساخت اپلیکیشن موبایل هم دارم.',
       what_i_do: [
         'توسعه اپلیکیشن‌های  کراس پلتفرم با استفاده از فلاتر',
         'توسعه اپلیکیشن های نیتیو برای پلتفرم های Android & IOS',
         'طراحی و توسعه بک‌اند‌های پیچیده و مقیاس‌پذیر با ASP.NET Core ',
-        'درحال یادگیری و کسب تجربه با React و Next.js',
+        'توسعه وب سایت های مدرن و کارآمد با React و Next.js',
       ],
       chips: ['کدنویسی 👨🏻‍💻', 'گیم 🎮', 'عاشق قهوه ☕️', 'طبیعت 🌳'],
       yearsExp: "سال تجربه",
       projects: "پروژه"
     },
     services: {
-      title: 'من چه کاری میتونم برات کنم؟',
-      mobile: 'اپلیکیشن های موبایل',
-      web: 'طراحی وبسایت',
-      desktop: 'نرم افزار های دسکتاپ',
-      mobile_desc: "با تخصص در توسعه اپلیکیشن‌های موبایل، می‌توانم برنامه‌های کاربردی جذاب  برای سیستم‌عامل‌های ای او اس  و اندروید طراحی کنم. اعم از برنامه‌های نیتیو یا کراس‌پلتفرم، من برنامه‌هایی با بهینه‌سازی عملکرد، امنیت و قابلیت مقیاس‌پذیری ایجاد می‌کنم که نیازهای شما را برآورده کند.",
-      web_desc: "به دنبال ساخت وب اپلیکیشنی منحصر به‌ فرد که با نیازهای شما هماهنگ باشد هستید؟  من در طراحی و توسعه برنامه‌های وب پویا و سفارشی تخصص دارم و  با توجه به هدف‌ها  و نیازهای کاربران شما،  می‌توانم برنامه‌های وب ساده یا پیچیده  منطبق با نیاز های شما طراحی و توسعه دهم.",
-      desktop_desc: "به عنوان یک توسعه‌دهنده دسکتاپ، من برنامه‌هایی  با طراحی مدرن  و قابل اعتماد ایجاد می‌کنم که نیازهای شما را برآورده می‌کنند. اعم از برنامه‌های مستقل تا نرم‌افزار سطح شرکتی، من برنامه‌هایی را ساخته و طراحی می‌کنم که در هر محیطی به خوبی عمل کنند.",
+      title: 'چه کاری می‌تونم برات انجام بدم؟',
+      mobile: 'اپلیکیشن موبایل',
+      web: 'وب‌سایت و بک‌اند',
+      bot: 'ربات‌های تلگرام',
+      mobile_desc: "اپلیکیشنی برای آیفون یا اندروید نیاز داری که سریع، امن و بدون مشکل اجرا بشه؟ من طراحی و توسعه‌ش رو از صفر تا انتشار برات انجام می‌دم.",
+      web_desc: "از یه وب‌سایت ساده گرفته تا سیستمی پیچیده با بک‌اندی مقیاس‌پذیر، هر چی کسب‌وکارت بهش نیاز داره رو طراحی و پیاده‌سازی می‌کنم؛ سریع، امن و آماده برای رشد.",
+      bot_desc: "می‌خوای فرایندهای تکراری رو خودکار کنی یا مستقیم با مشتری‌هات روی تلگرام در ارتباط باشی؟ این دقیقاً همون چیزیه که توش تخصص دارم؛ از ربات فروشگاهی تا سیستم‌های مدیریتی هوشمند.",
     },
     projects: {
       title: 'پروژه‌های منتخب',
@@ -93,16 +93,16 @@ export const content = {
     },
     work: {
       title: 'همکاری با من',
-      subtitle: 'آیا پروژه‌ای در ذهن دارید؟',
+      subtitle: 'ایده‌ای تو ذهنته؟ بیا با هم شروعش کنیم.',
       types: ['تمام‌وقت', 'پروژه‌ای', 'مشاوره'],
-      help_text: 'من می‌توانم در توسعه اپلیکیشن‌های موبایل، طراحی سیستم‌های بک‌ند و مشاوره فنی به شما کمک کنم.',
+      help_text: 'هر چی باشه؛ یه وب‌سایت ساده، یه بک‌اند پیچیده، یه ربات تلگرام یا یه اپلیکیشن موبایل، کنارتم تا از ایده به یه محصول واقعی برسیم.',
       cta_email: 'ارسال ایمیل',
       cta_cv: 'دانلود رزومه',
       cta_call: 'رزرو مشاوره'
     },
     contact: {
       title: 'تماس با من',
-      description: 'برای همکاری یا گفت‌وگو درباره ایده‌تان خوشحال می‌شوم پیام بدهید.',
+      description: 'پروژه‌ای تو ذهنته یا فقط می‌خوای حرف بزنیم؟ خوشحال می‌شم بشنوم. بیایید یک پروژه شروع کنیم 🚀',
       name_label: 'نام شما',
       email_label: 'ایمیل',
       message_label: 'پیام',
@@ -132,10 +132,11 @@ export const content = {
     },
     hero: {
       greeting: "Hi, I'm Amin Zamani Afshar",
-      role: 'Mobile & Web Developer',
-      description: '5 years experience in .NET, diving into modern web.',
+      role: 'Software Engineer — Websites, Backends & Telegram Bots',
+      description: 'A website that converts. A backend you can trust. A Telegram bot that automates the busywork. I build these for businesses, startups, and solo founders — from idea to finished product, backed by 5+ years of experience.',
       cta_projects: 'View Projects',
       cta_articles: 'Read Articles',
+      cta_contact: "Let's start your project",
       hud_online: 'ONLINE',
       hud_build: 'v2.0.4',
       hud_latency: '12ms',
@@ -143,25 +144,25 @@ export const content = {
     },
     about: {
       title: 'About Me',
-      bio: 'I am a software developer passionate about building beautiful and functional user interfaces. My main focus has been the .NET ecosystem, but I am now diving into the world of modern web and React.',
+      bio: "Ever since I started coding, the thing I've loved most is watching an idea move off the page and into something real that people actually use. That's why, for over 5 years, I've worked alongside businesses, startups, and solo founders to turn what they need into a website, backend, or app that actually works. My core expertise is building powerful websites and backends, and one area I focus on more than most is Telegram bots — because I've seen how much they can simplify a business. Alongside that, I also have hands-on experience building mobile apps.",
       what_i_do: [
-        'Mobile app development with Xamarin & .NET MAUI',
-        'Backend design and implementation with ASP.NET Core',
-        'Learning and experimenting with React & Next.js',
-        'Clean and modern UI design'
+        '✅ Websites & web apps — with React and Next.js',
+        '✅ Secure, scalable backends & APIs — with ASP.NET Core and .NET',
+        '✅ Telegram bots & automation — my specialty',
+        '✅ Mobile apps — with Flutter, for Android and iOS',
       ],
       chips: ['Developer', 'Gamer', 'Coffee Lover', 'Night Coder'],
       yearsExp: "Years Exp",
       projects: "Projects"
     },
     services: {
-      title: "How Can I Help You?",
-      mobile: "Mobile App Development",
-      web: "Website Design & Development",
-      desktop: "Desktop Application Development",
-      mobile_desc: "I specialize in crafting engaging mobile applications for both iOS and Android platforms. Whether you need native or cross-platform solutions, I build optimized, secure, and scalable apps that meet your specific requirements.",
-      web_desc: "Looking for a unique web application perfectly aligned with your needs? I specialize in designing and developing dynamic, custom web applications.  I’ll work with you to understand your goals and user needs, creating web solutions – from simple to complex – tailored to your vision.",
-      desktop_desc: "As a desktop application developer, I create modern and reliable software solutions to meet your business needs. From standalone applications to enterprise-level software, I build and design programs that perform flawlessly in any environment.",
+      title: "What Can I Do For You?",
+      mobile: "Mobile Apps",
+      web: "Websites & Backends",
+      bot: "Telegram Bots",
+      mobile_desc: "Need an app for iPhone or Android that's fast, secure, and just works? I handle it end-to-end, from design to launch.",
+      web_desc: "From a simple website to a complex system with a scalable backend, I design and build whatever your business needs — fast, secure, and ready to grow.",
+      bot_desc: "Want to automate repetitive tasks or talk directly to your customers on Telegram? This is exactly where I specialize — from storefront bots to smart management systems.",
     },
     projects: {
       title: 'Featured Projects',
@@ -181,16 +182,16 @@ export const content = {
     },
     work: {
       title: 'Work With Me',
-      subtitle: 'Have a project in mind?',
+      subtitle: 'Have a project in mind? Let\'s start it together.',
       types: ['Full-time', 'Freelance', 'Consulting'],
-      help_text: 'I can help you with mobile app development, backend system design, and technical consulting.',
+      help_text: 'Whatever it is — a simple website, a complex backend, a Telegram bot, or a mobile app — I\'m here to take it from idea to a real product.',
       cta_email: 'Send Email',
       cta_cv: 'Download CV',
       cta_call: 'Book a Call'
     },
     contact: {
       title: 'Contact Me',
-      description: 'I am always open to discussing new projects, ideas, and partnerships.',
+      description: "Got a project in mind, or just want to chat? I'd love to hear from you. Let's start a project together 🚀",
       name_label: 'Your Name',
       email_label: 'Email',
       message_label: 'Message',
@@ -300,17 +301,6 @@ export const projects: Project[] = [
     demoUrl: '',
     repoUrl: ''
   }
-  // {
-  //   id: 8,
-  //   title: { en: 'Chat Application', fa: 'ECommerce | فروشگاه' },
-  //   desc: { en: 'Real-time chat using SignalR.', fa: 'بک اند پیاده شده با دات نت برا ی فروشگاه مشابه دیجی کالا' },
-  //   tags: ['Backend', 'Asp .Net Core', 'Web Api'],
-  //   category: 'backend',
-  //   image: '/projects/sptimer_banner.png',
-  //   demoUrl: '',
-  //   repoUrl: 'https://github.com'
-  // }
-
 ];
 
 export const articles: Article[] = [
