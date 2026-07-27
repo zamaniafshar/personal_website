@@ -359,6 +359,19 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: { en: 'Elqo', fa: 'Elqo' },
+    desc: {
+      en: 'I contributed to the development of the international application Elqo as a member of the Zaman team. Elqo is an AI-powered platform designed to analyze and improve users’ communication and public speaking skills. By evaluating voice, delivery, eye contact, body language, and speech structure, Elqo provides intelligent feedback to help users improve their performance in interviews, presentations, and professional conversations.',
+      fa: 'در توسعه اپلیکیشن بینالمللی Elqo بهعنوان عضو تیم شرکت زمان مشارکت داشتم؛ محصولی مبتنی بر هوش مصنوعی برای تحلیل و بهبود مهارتهای ارتباطی و سخنرانی کاربران. Elqo با بررسی صدا، نحوه بیان، تماس چشمی، زبان بدن و ساختار صحبت، بازخورد هوشمند ارائه میدهد و به کاربران کمک میکند عملکرد خود را در مصاحبه، ارائه و مکالمات حرفهای بهبود دهند.'
+    },
+    tags: ['Mobile', 'Flutter', 'Cross Platform'],
+    category: 'mobile',
+    image: '/projects/elqo_banner.png',
+    demoUrl: 'https://play.google.com/store/apps/details?id=com.elqo.app',
+    repoUrl: ''
+  },
+  {
+    id: 5,
     title: { en: 'SPtimer | Smart Pomodoro Timer', fa: 'SPtimer | تایمر پومودورو هوشمند' },
     desc: {
       en: 'An open-source Flutter app with 10,000+ installs that helps users focus using the Pomodoro technique and reduce fatigue during daily tasks.',
@@ -371,7 +384,7 @@ export const projects: Project[] = [
     repoUrl: 'https://github.com/zamaniafshar/sptimer'
   },
   {
-    id: 5,
+    id: 6,
     title: { en: 'Bong Music', fa: 'Bong Music' },
     desc: {
       en: 'A cross-platform music player with talent-discovery features inspired by StarMaker — letting users listen, record and edit audio, build music videos, create profiles and share content.',
@@ -384,7 +397,7 @@ export const projects: Project[] = [
     repoUrl: ''
   },
   {
-    id: 6,
+    id: 7,
     title: { en: 'Infi Talk', fa: 'Infi Talk' },
     desc: {
       en: 'A cross-platform translator app powered by Azure AI for fast, accurate translation across 100+ languages — with voice translation, speech-to-text and instant translation.',
@@ -392,12 +405,12 @@ export const projects: Project[] = [
     },
     tags: ['Mobile', 'Translator', 'Flutter'],
     category: 'mobile',
-    image: '/projects/infitalk_banner.png',
+    image: '/projects/infi_talk_banner.png',
     demoUrl: '',
     repoUrl: 'https://github.com/zamaniafshar/project-showcase/tree/main/InfiTalk'
   },
   {
-    id: 7,
+    id: 8,
     title: { en: 'Personal Website', fa: 'وب‌سایت شخصی' },
     desc: {
       en: 'A bilingual, minimalist personal website built with Next.js and MDX.',
@@ -419,44 +432,48 @@ export const projects: Project[] = [
 export const experience: ExperienceItem[] = [
   {
     id: 1,
-    role: { en: 'Senior Full-Stack Developer', fa: 'توسعه‌دهنده‌ی ارشد فول‌استک' },
-    company: { en: 'Freelance · Remote', fa: 'فریلنس · دورکاری' },
-    period: { en: '2022 — Present', fa: '۱۴۰۱ — اکنون' },
+    role: { en: 'Senior Flutter Developer', fa: 'توسعه‌دهنده‌ی ارشد فلاتر' },
+    company: { en: 'ٔNahang Team', fa: 'تیم نهنگ' },
+    period: { en: '2025-2026', fa: '۱۴۰۴-۱۴۰۵' },
     type: { en: 'Freelance', fa: 'پروژه‌ای' },
     points: [
       {
-        en: 'Designed and shipped websites, scalable backends and Telegram bots for businesses and startups.',
-        fa: 'طراحی و انتشار وب‌سایت، بک‌اند مقیاس‌پذیر و ربات تلگرام برای کسب‌وکارها و استارتاپ‌ها.'
+        en: 'Developed and maintained production-ready mobile applications with Flutter, focusing on performance, scalability and clean architecture.',
+        fa: 'توسعه و نگهداری اپلیکیشن‌های موبایل آماده‌ی انتشار با Flutter با تمرکز بر عملکرد، مقیاس‌پذیری و معماری تمیز.'
       },
       {
-        en: 'Built end-to-end products from idea to launch with React, Next.js and ASP.NET Core.',
-        fa: 'ساخت محصول از ایده تا انتشار با React، Next.js و ASP.NET Core.'
+        en: 'Led the implementation of complex features, API integrations and reusable components across multiple Flutter projects.',
+        fa: 'پیاده‌سازی قابلیت‌های پیچیده، اتصال به APIها و توسعه کامپوننت‌های قابل استفاده مجدد در پروژه‌های مختلف Flutter.'
+      },
+      {
+        en: 'Improved code quality and development efficiency through modular architecture, code reviews and engineering best practices.',
+        fa: 'بهبود کیفیت کد و سرعت توسعه با استفاده از معماری ماژولار، بازبینی کد و استانداردهای مهندسی نرم‌افزار.'
       }
     ]
   },
   {
     id: 2,
-    role: { en: 'Backend Developer (.NET)', fa: 'توسعه‌دهنده‌ی بک‌اند (دات‌نت)' },
-    company: { en: 'Software Company', fa: 'شرکت نرم‌افزاری' },
-    period: { en: '2020 — 2022', fa: '۱۳۹۹ — ۱۴۰۱' },
-    type: { en: 'Full-time', fa: 'تمام‌وقت' },
+    role: { en: 'Senior Flutter Developer', fa: 'توسعه‌دهنده‌ی ارشد فلاتر' },
+    company: { en: 'Zaman Technology', fa: 'زمان تکنولوژی' },
+    period: { en: '2024-2025', fa: '۱۴۰۳-۱۴۰۴' },
+    type: { en: 'Full-time-remote', fa: 'تمام‌وقت-ریموت' },
     points: [
       {
-        en: 'Developed secure REST APIs and management systems with ASP.NET Core and SQL Server.',
-        fa: 'توسعه‌ی API امن و سیستم‌های مدیریتی با ASP.NET Core و SQL Server.'
+        en: 'Developed and optimized mobile applications using Flutter and Dart.',
+        fa: 'توسعه و بهینه‌سازی برنامه‌های کاربردی موبایل با استفاده از فلاتر و دارت'
       },
       {
-        en: 'Improved performance, data security and code maintainability across services.',
-        fa: 'بهبود کارایی، امنیت داده و نگه‌داری کد در سرویس‌های مختلف.'
+        en: 'Collaborated effectively with designers and developers to meet project requirements.',
+        fa: 'همکاری موثر با تیم طراحی و سایر برنامه‌نویسان برای تحقق نیازهای پروژه'
       }
     ]
   },
   {
     id: 3,
     role: { en: 'Mobile Developer (Flutter)', fa: 'توسعه‌دهنده‌ی موبایل (فلاتر)' },
-    company: { en: 'Product Team', fa: 'تیم محصول' },
-    period: { en: '2019 — 2020', fa: '۱۳۹۸ — ۱۳۹۹' },
-    type: { en: 'Full-time', fa: 'تمام‌وقت' },
+    company: { en: 'Vinerck', fa: 'وینرک' },
+    period: { en: '2023 — 2024', fa: '۱۴۰۲ — ۱۴۰۳' },
+    type: { en: 'Full-time-remote', fa: 'تمام‌وقت-ریموت' },
     points: [
       {
         en: 'Built cross-platform mobile apps for Android and iOS, published on app stores.',
